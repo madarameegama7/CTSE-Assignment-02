@@ -1,0 +1,14 @@
+[
+  {
+    "destination": "Ella",
+    "days": 2,
+    "budget": 400,
+    "preferences": ["nature", "relax"]
+  },
+  {
+    "destination": "Kandy",
+    "days": 2,
+    "budget": 250,
+    "preferences": ["culture", "nature"]
+  }
+]

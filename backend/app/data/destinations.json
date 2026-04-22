@@ -1,0 +1,26 @@
+{
+  "Ella": {
+    "activities": [
+      { "name": "Nine Arch Bridge", "type": "nature", "cost": 20 },
+      { "name": "Little Adam's Peak", "type": "hiking", "cost": 15 },
+      { "name": "Tea Plantation", "type": "relax", "cost": 10 },
+      { "name": "Ravana Falls", "type": "nature", "cost": 5 }
+    ]
+  },
+  "Kandy": {
+    "activities": [
+      { "name": "Temple of the Tooth", "type": "culture", "cost": 12 },
+      { "name": "Kandy Lake", "type": "relax", "cost": 0 },
+      { "name": "Botanical Garden", "type": "nature", "cost": 8 },
+      { "name": "Cultural Show", "type": "culture", "cost": 10 }
+    ]
+  },
+  "Galle": {
+    "activities": [
+      { "name": "Galle Fort", "type": "history", "cost": 0 },
+      { "name": "Jungle Beach", "type": "nature", "cost": 10 },
+      { "name": "Lighthouse Visit", "type": "relax", "cost": 5 },
+      { "name": "Museum Visit", "type": "culture", "cost": 7 }
+    ]
+  }
+}
