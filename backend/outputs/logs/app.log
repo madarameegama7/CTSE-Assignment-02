@@ -1,2 +1,46 @@
 2026-04-23 13:59:02 | INFO | [System] Workflow started
 2026-04-23 13:59:02 | INFO | [System] Initial state created
+2026-04-24 01:07:48 | INFO | [System] Workflow started
+2026-04-24 01:07:48 | INFO | [Planner Agent] Planner started
+2026-04-24 01:07:56 | INFO | [Planner Agent] Ollama unavailable, using fallback output: llama runner process has terminated: %!w(<nil>) (status code: 500)
+2026-04-24 01:07:56 | INFO | [Planner Agent] Planner created itinerary for 3 day(s)
+2026-04-24 01:07:56 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-04-24 01:07:56 | INFO | [BudgetAgent] Total trip cost calculated: 365.0
+2026-04-24 01:07:56 | INFO | [Validator Agent] Validation started
+2026-04-24 01:07:56 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-04-24 01:07:56 | INFO | [Validator Agent] Plan validated successfully
+2026-04-24 01:07:56 | INFO | [System] Validation passed, ending workflow
+2026-04-24 01:07:56 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
+2026-04-24 01:07:56 | INFO | [System] Workflow completed
+2026-04-24 01:29:08 | INFO | [System] Workflow started
+2026-04-24 01:29:08 | INFO | [Planner Agent] Planner started
+2026-04-24 01:30:56 | INFO | [System] Workflow started
+2026-04-24 01:30:56 | INFO | [Planner Agent] Planner started
+2026-04-24 01:35:30 | INFO | [System] Workflow started
+2026-04-24 01:35:30 | INFO | [Planner Agent] Planner started
+2026-04-24 01:37:54 | INFO | [System] Workflow started
+2026-04-24 01:37:54 | INFO | [Planner Agent] Planner started
+2026-04-24 01:41:15 | INFO | [System] Workflow started
+2026-04-24 01:41:15 | INFO | [Planner Agent] Planner started
+2026-04-24 01:41:19 | INFO | [Planner Agent] Ollama unavailable, using fallback output: llama runner process has terminated: %!w(<nil>) (status code: 500)
+2026-04-24 01:41:19 | INFO | [Planner Agent] Planner created itinerary for 2 day(s)
+2026-04-24 01:41:19 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-04-24 01:41:19 | INFO | [BudgetAgent] Total trip cost calculated: 260.0
+2026-04-24 01:41:19 | INFO | [Validator Agent] Validation started
+2026-04-24 01:41:19 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-04-24 01:41:19 | INFO | [Validator Agent] Plan validated successfully
+2026-04-24 01:41:19 | INFO | [System] Validation passed, ending workflow
+2026-04-24 01:41:19 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
+2026-04-24 01:41:19 | INFO | [System] Workflow completed
+2026-04-24 01:49:40 | INFO | [System] Workflow started
+2026-04-24 01:49:40 | INFO | [Planner Agent] Planner started
+2026-04-24 01:49:44 | INFO | [Planner Agent] Ollama unavailable, using fallback output: llama runner process has terminated: %!w(<nil>) (status code: 500)
+2026-04-24 01:49:44 | INFO | [Planner Agent] Planner created itinerary for 3 day(s)
+2026-04-24 01:49:44 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-04-24 01:49:44 | INFO | [BudgetAgent] Total trip cost calculated: 365.0
+2026-04-24 01:49:44 | INFO | [Validator Agent] Validation started
+2026-04-24 01:49:44 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-04-24 01:49:44 | INFO | [Validator Agent] Plan validated successfully
+2026-04-24 01:49:44 | INFO | [System] Validation passed, ending workflow
+2026-04-24 01:49:44 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
+2026-04-24 01:49:44 | INFO | [System] Workflow completed

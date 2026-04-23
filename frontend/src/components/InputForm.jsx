@@ -38,9 +38,12 @@ const InputForm = ({ onSubmit, isLoading }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800 flex items-center">
-        <svg className="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+    <div className="glass-card rounded-2xl p-8 h-full flex flex-col relative overflow-hidden">
+      <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+      <h2 className="text-2xl font-semibold mb-6 flex items-center font-outfit text-slate-800 tracking-tight">
+        <span className="p-2 bg-indigo-50 rounded-xl mr-3 text-indigo-600 shadow-sm border border-indigo-100">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </span>
         Plan Your Trip
       </h2>
       {error && (
@@ -48,62 +51,67 @@ const InputForm = ({ onSubmit, isLoading }) => {
           {error}
         </div>
       )}
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Destination</label>
+      <form onSubmit={handleSubmit} className="space-y-5 flex-grow flex flex-col relative z-10">
+        <div className="group">
+          <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Destination</label>
           <input
             type="text"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="e.g., Ella"
+            className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"
+            placeholder="e.g., Ella, Sri Lanka"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             disabled={isLoading}
           />
         </div>
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Days</label>
+        <div className="grid grid-cols-2 gap-5">
+          <div className="group">
+            <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Days</label>
             <input
               type="number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="e.g., 2"
+              className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"
+              placeholder="e.g., 3"
               value={days}
               onChange={(e) => setDays(e.target.value)}
               disabled={isLoading}
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Budget ($)</label>
+          <div className="group">
+            <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Budget ($)</label>
             <input
               type="number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="e.g., 400"
+              className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"
+              placeholder="e.g., 500"
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
               disabled={isLoading}
             />
           </div>
         </div>
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Preferences (comma-separated)</label>
+        <div className="group">
+          <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Preferences <span className="font-normal text-slate-400">(comma-separated)</span></label>
           <input
             type="text"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
-            placeholder="e.g., nature, relax"
+            className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"
+            placeholder="e.g., nature, relax, historical"
             value={preferences}
             onChange={(e) => setPreferences(e.target.value)}
             disabled={isLoading}
           />
         </div>
-        <div className="pt-2">
+        <div className="pt-4 mt-auto">
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full py-2.5 px-4 border border-transparent rounded-md shadow-sm text-white font-medium ${
-              isLoading ? 'bg-indigo-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'
-            } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors`}
+            className={`w-full py-3.5 px-4 rounded-xl shadow-lg shadow-indigo-200 text-white font-semibold text-lg tracking-wide ${
+              isLoading ? 'bg-indigo-300 cursor-not-allowed opacity-70' : 'bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 hover:-translate-y-0.5 hover:shadow-indigo-300 transform'
+            } transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-indigo-500/40`}
           >
-            {isLoading ? 'Planning...' : 'Plan My Trip'}
+            {isLoading ? (
+              <span className="flex items-center justify-center">
+                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Planning...
+              </span>
+            ) : 'Generate My Dream Trip'}
           </button>
         </div>
       </form>

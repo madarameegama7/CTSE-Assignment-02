@@ -3,21 +3,21 @@
     "days": 3,
     "budget": 500.0,
     "preferences": [
-        "nature"
+        "food"
     ],
     "itinerary": [
         {
             "day": 1,
             "activities": [
                 "Nine Arch Bridge",
-                "Ravana Falls"
+                "Little Adam's Peak"
             ]
         },
         {
             "day": 2,
             "activities": [
-                "Little Adam's Peak",
-                "Ella Rock"
+                "Ella Rock",
+                "Ravana Falls"
             ]
         },
         {
@@ -27,7 +27,7 @@
             ]
         }
     ],
-    "planner_output": "Initial Trip Draft\nDestination: ella\nDuration: 3 days\nPreferences: nature\n\nDraft Itinerary\nDay 1:\n- Nine Arch Bridge\n- Ravana Falls\n\nDay 2:\n- Little Adam's Peak\n- Ella Rock\n\nDay 3:\n- Free exploration\n\nPlanning Notes:\n- Generated from local destination data.\n- Budget and validation will be handled by downstream agents.",
+    "planner_output": "Initial Trip Draft\nDestination: ella\nDuration: 3 days\nPreferences: food\n\nDraft Itinerary\nDay 1:\n- Nine Arch Bridge\n- Little Adam's Peak\n\nDay 2:\n- Ella Rock\n- Ravana Falls\n\nDay 3:\n- Free exploration\n\nPlanning Notes:\n- Generated from local destination data.\n- Budget and validation will be handled by downstream agents.",
     "cost_breakdown": {
         "accommodation": 160.0,
         "food": 75.0,

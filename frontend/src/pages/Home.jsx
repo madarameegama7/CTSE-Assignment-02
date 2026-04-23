@@ -32,16 +32,24 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto space-y-8">
+    <div className="min-h-screen relative overflow-hidden bg-slate-50 py-12 px-4 sm:px-6 lg:px-8 font-sans">
+      {/* Background Orbs */}
+      <div className="absolute top-0 -left-4 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+      <div className="absolute top-0 -right-4 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob" style={{ animationDelay: '4s' }}></div>
+
+      <div className="relative max-w-6xl mx-auto space-y-10 z-10">
         
         {/* Header Section */}
-        <div className="text-center">
-          <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-            Multi-Agent Travel Planner
+        <div className="text-center space-y-4 animate-fade-in-up">
+          <div className="inline-flex items-center justify-center p-1.5 bg-white/60 backdrop-blur-sm rounded-full mb-2 border border-slate-200/50 shadow-sm">
+            <span className="text-indigo-600 text-xs font-semibold tracking-wider uppercase px-3">AI Powered</span>
+          </div>
+          <h1 className="text-4xl font-extrabold font-outfit text-slate-900 sm:text-5xl tracking-tight">
+            Multi-Agent <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">Travel Planner</span>
           </h1>
-          <p className="mt-3 max-w-2xl mx-auto text-xl text-gray-500">
-            Intelligent itinerary generation powered by AI agents
+          <p className="max-w-2xl mx-auto text-lg text-slate-500 font-medium">
+            Intelligent, personalized itinerary generation designed to build your dream trip in seconds.
           </p>
         </div>
 
@@ -69,36 +77,39 @@ const Home = () => {
             {isLoading && <LoadingStepper />}
             
             {!isLoading && !result && !error && (
-              <div className="bg-white p-10 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center justify-center text-center h-full min-h-[300px]">
-                <div className="bg-indigo-50 p-4 rounded-full mb-4">
-                  <svg className="w-12 h-12 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <div className="glass-card rounded-2xl flex flex-col items-center justify-center text-center h-full min-h-[400px] p-10 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative z-10">
+                  <div className="bg-white/80 p-5 rounded-2xl shadow-sm mb-6 inline-block transform group-hover:-translate-y-2 transition-all duration-300">
+                    <svg className="w-12 h-12 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold font-outfit text-slate-800 mb-3">Ready to plan</h3>
+                  <p className="text-slate-500 max-w-sm mx-auto leading-relaxed">Enter your destination, days, budget, and preferences to build your ideal itinerary.</p>
                 </div>
-                <h3 className="text-xl font-medium text-gray-900 mb-2">Ready to plan</h3>
-                <p className="text-gray-500 max-w-sm">Enter your destination, days, budget, and preferences to build your ideal itinerary.</p>
               </div>
             )}
 
             {!isLoading && result && (
               <div className="space-y-6">
                 {/* Trip Summary Card */}
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="border-r border-gray-100">
-                    <p className="text-sm text-gray-500 font-medium">Destination</p>
-                    <p className="text-lg font-bold text-gray-900">{result.destination}</p>
+                <div className="glass-card rounded-2xl p-6 grid grid-cols-2 md:grid-cols-4 gap-4 animate-fade-in-up">
+                  <div className="md:border-r border-slate-200/50 px-2">
+                    <p className="text-sm text-slate-500 font-medium tracking-wide uppercase">Destination</p>
+                    <p className="text-xl font-bold font-outfit text-slate-900 mt-1">{result.destination}</p>
                   </div>
-                  <div className="border-r border-gray-100 px-4">
-                    <p className="text-sm text-gray-500 font-medium">Duration</p>
-                    <p className="text-lg font-bold text-gray-900">{result.days} Days</p>
+                  <div className="md:border-r border-slate-200/50 px-2 md:px-4">
+                    <p className="text-sm text-slate-500 font-medium tracking-wide uppercase">Duration</p>
+                    <p className="text-xl font-bold font-outfit text-slate-900 mt-1">{result.days} <span className="text-lg font-medium text-slate-600">Days</span></p>
                   </div>
-                  <div className="border-r border-gray-100 px-4">
-                    <p className="text-sm text-gray-500 font-medium">Budget</p>
-                    <p className="text-lg font-bold text-gray-900">${result.budget}</p>
+                  <div className="md:border-r border-slate-200/50 px-2 md:px-4">
+                    <p className="text-sm text-slate-500 font-medium tracking-wide uppercase">Budget</p>
+                    <p className="text-xl font-bold font-outfit text-slate-900 mt-1"><span className="text-lg font-medium text-slate-600">$</span>{result.budget}</p>
                   </div>
-                  <div className="px-4">
-                    <p className="text-sm text-gray-500 font-medium">Preferences</p>
-                    <div className="flex flex-wrap gap-1 mt-1">
+                  <div className="px-2 md:px-4">
+                    <p className="text-sm text-slate-500 font-medium tracking-wide uppercase mb-1">Preferences</p>
+                    <div className="flex flex-wrap gap-1.5 mt-1">
                       {(result.preferences || []).map((p, i) => (
-                        <span key={i} className="inline-block bg-indigo-50 text-indigo-700 text-xs px-2 py-0.5 rounded border border-indigo-100">
+                        <span key={i} className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-indigo-50/80 text-indigo-700 border border-indigo-200/60 shadow-sm">
                           {p}
                         </span>
                       ))}
@@ -120,13 +131,15 @@ const Home = () => {
                 </div>
 
                 {/* Planner Output Card */}
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                <div className="glass-card rounded-2xl p-6">
+                  <h3 className="text-xl font-semibold font-outfit text-slate-800 mb-4 flex items-center">
+                    <span className="p-2 bg-purple-50 rounded-lg mr-3 text-purple-600">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    </span>
                     Planner Draft
                   </h3>
-                  <div className="bg-gray-50 p-4 rounded border border-gray-200">
-                    <pre className="whitespace-pre-wrap font-sans text-sm text-gray-700 leading-relaxed">
+                  <div className="bg-white/50 p-5 rounded-xl border border-slate-200/60 shadow-inner">
+                    <pre className="whitespace-pre-wrap font-sans text-sm text-slate-700 leading-relaxed max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                       {result.planner_output || "No draft available."}
                     </pre>
                   </div>

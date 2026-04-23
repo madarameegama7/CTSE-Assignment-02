@@ -4,6 +4,14 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-800 antialiased;
+    @apply bg-slate-50 text-slate-800 antialiased selection:bg-indigo-200 selection:text-indigo-900;
   }
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-sm transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply shadow-md border-white/80 bg-white/80;
 }
