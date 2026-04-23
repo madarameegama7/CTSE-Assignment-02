@@ -1,17 +1,42 @@
 {
-  "ella": {
-    "hotel_per_night": 80,
-    "food_per_day": 25,
-    "transport_base": 60
+  "colombo": {
+    "hotel_per_night": 95,
+    "food_per_day": 30,
+    "transport_base": 40
   },
   "kandy": {
     "hotel_per_night": 70,
     "food_per_day": 22,
     "transport_base": 50
   },
+  "ella": {
+    "hotel_per_night": 80,
+    "food_per_day": 25,
+    "transport_base": 60
+  },
+  "nuwara_eliya": {
+    "hotel_per_night": 85,
+    "food_per_day": 24,
+    "transport_base": 55
+  },
   "galle": {
     "hotel_per_night": 90,
     "food_per_day": 28,
     "transport_base": 65
+  },
+  "mirissa": {
+    "hotel_per_night": 88,
+    "food_per_day": 27,
+    "transport_base": 60
+  },
+  "sigiriya": {
+    "hotel_per_night": 92,
+    "food_per_day": 26,
+    "transport_base": 70
+  },
+  "yala": {
+    "hotel_per_night": 110,
+    "food_per_day": 32,
+    "transport_base": 85
   }
 }
