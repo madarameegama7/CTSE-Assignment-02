@@ -4,7 +4,7 @@ from typing import Any, Dict
 
 import pytest
 
-from app.agents.planner_agent import planner_agent
+import app.agents.planner_agent as planner_agent
 from app.tools.data_reader import (
     format_destination_context,
     normalize_destination_key,

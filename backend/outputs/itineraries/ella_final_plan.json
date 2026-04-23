@@ -1,7 +1,7 @@
 {
     "destination": "Ella",
     "days": 2,
-    "budget": 400.0,
+    "budget": 50.0,
     "preferences": [
         "nature"
     ],
@@ -9,28 +9,30 @@
         {
             "day": 1,
             "activities": [
-                "Nine Arch Bridge",
-                "Ravana Falls"
+                "Nine Arch Bridge"
             ]
         },
         {
             "day": 2,
             "activities": [
-                "Little Adam's Peak",
-                "Ella Rock"
+                "Little Adam's Peak"
             ]
         }
     ],
-    "planner_output": "Initial Trip Draft\nDestination: Ella, Sri Lanka\nDuration: 2 days\nTravelers: 1 person\nInterests: nature\n\nAssumptions:\n- The train ride to Nine Arch Bridge is included in the travel package.\n- There are no specific accommodations provided; a local hotel or guesthouse will be chosen based on availability and preferences.\n\nDraft Itinerary\nDay 1:\n- Morning: Board the scenic train from Ella Town to Nine Arch Bridge, arriving at Ravana Falls. Enjoy the natural beauty of the area.\n- Afternoon: Visit Ravana Falls for a refreshing swim in the waterfalls or explore nearby hiking trails.\n- Evening: Return to Ella Town and enjoy dinner at a local restaurant.\n\nDay 2:\n- Morning: Drive from Ella Town to Little Adam's Peak, taking in the scenic views along the way. Arrive early to avoid crowds.\n- Afternoon: Hike up to Little Adam's Peak for panoramic views of the surrounding countryside.\n- Evening: Return to Ella Town and enjoy a leisurely evening exploring Passara Road area or relaxing at a local spa.\n\nPlanning Notes for Budget Agent:\n- The train ride is included in the travel package, so no additional cost needs to be considered for this leg of the trip. \n- Accommodation costs will need to be estimated based on availability.\n- Transportation within Ella Town and between attractions can be arranged via tuk-tuks or walking.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that transportation options are available and reliable, especially during peak tourist seasons.\n- Confirm that all activities align with the traveler's interest in nature.\n- Validate that there is sufficient time to fully enjoy each attraction without feeling rushed.\n\nPlanning Notes for Recommendation Agent:\n- Recommend a local tour guide or experienced driver who can provide additional insights into the area.\n- Suggest alternative hiking trails if Ravana Falls becomes too crowded, ensuring they are safe and suitable for solo travelers.",
+    "planner_output": "Initial Trip Draft\nDestination: Ella, Sri Lanka (2 days)\nDuration: 2 days\nTravelers: 1 adult\nInterests: nature\n\nAssumptions:\n- The train ride to Nine Arch Bridge is included in the trip.\n- Some walking may be required for visiting Ravana Falls and Little Adam's Peak.\n\nDraft Itinerary\nDay 1:\n- Morning: Take a scenic train ride from Ella Town to Nine Arch Bridge, where you can explore the area around the bridge. Afterward, visit Ravana Falls, which is known for its natural beauty.\n- Afternoon: Continue exploring the surroundings of Nine Arch Bridge and perhaps take a short walk in the nearby nature reserve.\n- Evening: Return to Ella Town or stay at your accommodation near Nine Arch Bridge.\n\nDay 2:\n- Morning: Drive from Ella Town to Little Adam's Peak, which offers stunning views over the surrounding countryside. You might also consider visiting Ella Rock for additional scenic viewpoints and hiking opportunities.\n- Afternoon: Spend some time exploring the area around Little Adam's Peak or take a leisurely walk in nearby nature reserves.\n- Evening: Return to your accommodation near Nine Arch Bridge or Ella Town, depending on your location.\n\nPlanning Notes for Budget Agent:\n- The train ride is included as part of the trip package. Walking and tuk-tuks are common modes of transport within the area, but they may add to the cost.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that transportation options (train, walking) are available during the planned travel dates.\n- Confirm visa requirements if applicable.\n- Verify weather conditions as they can affect outdoor activities like hiking and sightseeing.\n\nPlanning Notes for Recommendation Agent:\n- Suggest local restaurants or cafes near the main attractions.\n- Recommend accommodation options based on proximity to popular sites.",
     "cost_breakdown": {
         "accommodation": 80.0,
         "food": 50.0,
         "transport": 60.0,
-        "activities": 70.0
+        "activities": 35.0
     },
-    "total_cost": 260.0,
-    "validation_status": "VALID",
-    "validation_errors": [],
-    "recommended_changes": [],
-    "recommendation_attempts": 0
+    "total_cost": 225.0,
+    "validation_status": "INVALID",
+    "validation_errors": [
+        "Budget exceeded by 175.00. Total cost is 225.00, budget is 50.00."
+    ],
+    "recommended_changes": [
+        "Reduced number of paid activities to help lower the total cost."
+    ],
+    "recommendation_attempts": 1
 }
