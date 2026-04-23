@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 from app.agents.recommendation_agent import recommendation_agent
 
 
@@ -33,7 +35,7 @@ def test_recommendation_agent_reduces_budget():
         "budget": 200.0,
         "preferences": ["nature"],
         "itinerary": [
-            {"day": 1, "activities": ["Nine Arch Bridge", "Tea Plantation"]},
+            {"day": 1, "activities": ["Nine Arch Bridge", "Ella Rock"]},
             {"day": 2, "activities": ["Little Adam's Peak", "Ravana Falls"]}
         ],
         "cost_breakdown": {},
@@ -47,10 +49,14 @@ def test_recommendation_agent_reduces_budget():
         "logs": []
     }
 
+    original_itinerary = deepcopy(state["itinerary"])
+
     result = recommendation_agent(state)
 
-    assert result["total_cost"] == 200.0
-    assert any("budget" in change.lower() for change in result["recommended_changes"])
+    assert result["itinerary"] != original_itinerary
+    assert result["itinerary"][0]["activities"] == ["Nine Arch Bridge"]
+    assert result["itinerary"][1]["activities"] == ["Little Adam's Peak"]
+    assert any("lower the total cost" in change.lower() for change in result["recommended_changes"])
     assert result["output_file"] is not None
 
 

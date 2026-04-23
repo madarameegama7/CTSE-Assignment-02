@@ -64,23 +64,9 @@ def _reduce_cost(total_cost: float, budget: float) -> float:
 
 
 def recommendation_agent(state: TravelState) -> TravelState:
-    """
-    Improve an invalid travel plan based on validator errors.
-
-    Actions:
-    - reduce activities per day
-    - fill empty activity days
-    - align itinerary with requested day count
-    - reduce total cost if over budget
-    - save updated final plan to file
-
-    Args:
-        state: Shared workflow state.
-
-    Returns:
-        Updated state with recommendations and saved file path.
-    """
     state["logs"].append(log_event("Recommendation Agent", "Recommendation step started"))
+
+    state["recommendation_attempts"] = state.get("recommendation_attempts", 0) + 1
 
     if state.get("validation_status") != "INVALID":
         state["logs"].append(
@@ -100,8 +86,9 @@ def recommendation_agent(state: TravelState) -> TravelState:
         error_lower = error.lower()
 
         if "budget exceeded" in error_lower:
-            updated_total_cost = _reduce_cost(updated_total_cost, budget)
-            recommended_changes.append("Reduced estimated total cost to fit within budget.")
+            # Reduce itinerary complexity instead of only changing total_cost
+            updated_itinerary = _reduce_activities(updated_itinerary, max_activities_per_day=1)
+            recommended_changes.append("Reduced number of paid activities to lower the total cost.")
 
         if "too many activities" in error_lower:
             updated_itinerary = _reduce_activities(updated_itinerary, max_activities_per_day=2)
@@ -116,7 +103,6 @@ def recommendation_agent(state: TravelState) -> TravelState:
             recommended_changes.append("Adjusted itinerary to match requested number of days.")
 
     state["itinerary"] = updated_itinerary
-    state["total_cost"] = updated_total_cost
     state["recommended_changes"] = recommended_changes
 
     final_output = {

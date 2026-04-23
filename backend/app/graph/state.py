@@ -19,4 +19,5 @@ class TravelState(TypedDict, total=False):
     recommended_changes: List[str]
     output_file: Optional[str]
 
+    recommendation_attempts: int
     logs: List[str]

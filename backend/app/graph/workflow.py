@@ -25,15 +25,24 @@ def _build_initial_state(request: TripRequest) -> TravelState:
         "validation_errors": [],
         "recommended_changes": [],
         "output_file": None,
+        "recommendation_attempts": 0,
         "logs": [log_event("System", "Workflow started")]
     }
 
 
 def _route_after_validation(state: TravelState) -> str:
-    route = should_recommend(state)
-    if route == "recommendation":
+    if state.get("validation_status") == "INVALID":
+        attempts = state.get("recommendation_attempts", 0)
+
+        if attempts >= 1:
+            state["logs"].append(
+                log_event("System", "Maximum recommendation attempts reached, ending workflow")
+            )
+            return "end"
+
         state["logs"].append(log_event("System", "Routing to Recommendation Agent"))
         return "recommendation"
+
     state["logs"].append(log_event("System", "Validation passed, ending workflow"))
     return "end"
 
