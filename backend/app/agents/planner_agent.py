@@ -6,8 +6,7 @@ from typing import Any, Callable, Dict
 
 from langchain_ollama import ChatOllama
 
-from tools.data_reader import format_destination_context, read_destination_data
-
+from app.tools.data_reader import format_destination_context, read_destination_data
 
 PlannerState = Dict[str, Any]
 
@@ -37,24 +36,17 @@ def setup_logger() -> logging.Logger:
 logger = setup_logger()
 
 
-def load_planner_prompt(prompt_path: str = "prompts/planner_prompt.txt") -> str:
+def load_planner_prompt() -> str:
     """
-    Load the planner agent system prompt from a text file.
-
-    Args:
-        prompt_path: Path to the planner prompt file.
-
-    Returns:
-        Prompt text.
-
-    Raises:
-        FileNotFoundError: If prompt file does not exist.
+    Load the planner prompt using a path relative to this file.
     """
-    path = Path(prompt_path)
-    if not path.exists():
+    project_root = Path(__file__).resolve().parents[1]
+    prompt_path = project_root / "prompts" / "planner_prompt.txt"
+
+    if not prompt_path.exists():
         raise FileNotFoundError(f"Planner prompt file not found: {prompt_path}")
 
-    return path.read_text(encoding="utf-8")
+    return prompt_path.read_text(encoding="utf-8")
 
 
 def build_planner_input(state: PlannerState) -> str:

@@ -5,7 +5,10 @@ from pathlib import Path
 from typing import Any, Dict
 
 
-DATA_FILE = Path("data/destinations.json")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parents[1]
+DATA_FILE = BASE_DIR / "data" / "destinations.json"
 
 
 def normalize_destination_key(destination: str) -> str:
