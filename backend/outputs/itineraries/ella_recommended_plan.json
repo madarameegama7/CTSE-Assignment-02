@@ -1,0 +1,37 @@
+{
+    "destination": "Ella",
+    "days": 3,
+    "budget": 500.0,
+    "preferences": [
+        "nature"
+    ],
+    "itinerary": [
+        {
+            "day": 1,
+            "activities": [
+                "A"
+            ]
+        },
+        {
+            "day": 2,
+            "activities": [
+                "B"
+            ]
+        },
+        {
+            "day": 3,
+            "activities": [
+                "Free exploration"
+            ]
+        }
+    ],
+    "cost_breakdown": {},
+    "total_cost": 150.0,
+    "validation_status": "RECOMMENDED",
+    "validation_errors": [
+        "Itinerary day count mismatch. Expected 3, got 2."
+    ],
+    "recommended_changes": [
+        "Adjusted itinerary to match requested number of days."
+    ]
+}
