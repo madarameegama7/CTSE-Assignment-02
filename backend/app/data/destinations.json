@@ -1,26 +1,73 @@
 {
-  "Ella": {
-    "activities": [
-      { "name": "Nine Arch Bridge", "type": "nature", "cost": 20 },
-      { "name": "Little Adam's Peak", "type": "hiking", "cost": 15 },
-      { "name": "Tea Plantation", "type": "relax", "cost": 10 },
-      { "name": "Ravana Falls", "type": "nature", "cost": 5 }
-    ]
+  "colombo": {
+    "destination": "Colombo",
+    "summary": "Colombo is the commercial capital of Sri Lanka with a mix of modern city life, colonial buildings, shopping, and food.",
+    "areas_to_stay": ["Colombo 03", "Colombo 07", "Fort"],
+    "transport_tips": ["Use PickMe/Uber", "Avoid rush hour traffic", "Tuk-tuks are common"],
+    "must_see_places": ["Galle Face Green", "Gangaramaya Temple", "Independence Square", "Colombo National Museum"],
+    "food_notes": ["Try Sri Lankan rice and curry", "Street food at Galle Face", "Seafood restaurants"]
   },
-  "Kandy": {
-    "activities": [
-      { "name": "Temple of the Tooth", "type": "culture", "cost": 12 },
-      { "name": "Kandy Lake", "type": "relax", "cost": 0 },
-      { "name": "Botanical Garden", "type": "nature", "cost": 8 },
-      { "name": "Cultural Show", "type": "culture", "cost": 10 }
-    ]
+
+  "kandy": {
+    "destination": "Kandy",
+    "summary": "Kandy is a cultural city surrounded by mountains and is home to the Temple of the Tooth Relic.",
+    "areas_to_stay": ["Kandy City Center", "Lake Round", "Peradeniya"],
+    "transport_tips": ["Walking is possible in town", "Use tuk-tuks for hills"],
+    "must_see_places": ["Temple of the Tooth", "Kandy Lake", "Royal Botanical Gardens"],
+    "food_notes": ["Try local buffets", "Sri Lankan sweets"]
   },
-  "Galle": {
-    "activities": [
-      { "name": "Galle Fort", "type": "history", "cost": 0 },
-      { "name": "Jungle Beach", "type": "nature", "cost": 10 },
-      { "name": "Lighthouse Visit", "type": "relax", "cost": 5 },
-      { "name": "Museum Visit", "type": "culture", "cost": 7 }
-    ]
+
+  "ella": {
+    "destination": "Ella",
+    "summary": "Ella is a scenic hill country town famous for hiking, views, and relaxing atmosphere.",
+    "areas_to_stay": ["Ella Town", "Near Nine Arch Bridge"],
+    "transport_tips": ["Walk or tuk-tuk", "Train journey is scenic"],
+    "must_see_places": ["Nine Arch Bridge", "Little Adam’s Peak", "Ella Rock"],
+    "food_notes": ["Cafes with views", "Local rice and curry"]
+  },
+
+  "nuwara_eliya": {
+    "destination": "Nuwara Eliya",
+    "summary": "Nuwara Eliya is known as 'Little England' with cool weather, tea plantations, and colonial style.",
+    "areas_to_stay": ["Town Center", "Lake Gregory area"],
+    "transport_tips": ["Hire car or tuk-tuk", "Distances are larger"],
+    "must_see_places": ["Tea Plantations", "Gregory Lake", "Hakgala Botanical Garden"],
+    "food_notes": ["Hot meals due to cold weather", "Tea experiences"]
+  },
+
+  "galle": {
+    "destination": "Galle",
+    "summary": "Galle is a historic coastal city famous for its Dutch Fort and colonial charm.",
+    "areas_to_stay": ["Galle Fort", "Unawatuna nearby"],
+    "transport_tips": ["Walk inside fort", "Tuk-tuks for outside travel"],
+    "must_see_places": ["Galle Fort", "Lighthouse", "Dutch Reformed Church"],
+    "food_notes": ["Seafood", "Cafe culture"]
+  },
+
+  "mirissa": {
+    "destination": "Mirissa",
+    "summary": "Mirissa is a beach destination known for whale watching and nightlife.",
+    "areas_to_stay": ["Mirissa Beach", "Weligama nearby"],
+    "transport_tips": ["Tuk-tuks", "Walking along beach"],
+    "must_see_places": ["Whale Watching", "Coconut Tree Hill", "Beach"],
+    "food_notes": ["Seafood BBQ", "Beach cafes"]
+  },
+
+  "sigiriya": {
+    "destination": "Sigiriya",
+    "summary": "Sigiriya is famous for the Lion Rock fortress and ancient history.",
+    "areas_to_stay": ["Sigiriya Town", "Dambulla nearby"],
+    "transport_tips": ["Hire tuk-tuk or car"],
+    "must_see_places": ["Sigiriya Rock", "Pidurangala Rock", "Dambulla Cave Temple"],
+    "food_notes": ["Local village food", "Rice and curry"]
+  },
+
+  "yala": {
+    "destination": "Yala",
+    "summary": "Yala is a wildlife destination known for safaris and leopards.",
+    "areas_to_stay": ["Yala Gate area", "Tissamaharama"],
+    "transport_tips": ["Safari jeep required", "Book tours in advance"],
+    "must_see_places": ["Yala National Park"],
+    "food_notes": ["Hotel meals", "Simple local dishes"]
   }
 }
