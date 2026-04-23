@@ -9,6 +9,8 @@ class TripResponse(BaseModel):
     preferences: List[str]
 
     itinerary: List[Dict[str, Any]] = Field(default_factory=list)
+    planner_output: Optional[str] = None
+
     cost_breakdown: Dict[str, float] = Field(default_factory=dict)
     total_cost: float = 0.0
 

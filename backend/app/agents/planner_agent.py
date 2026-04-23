@@ -1,182 +1,201 @@
 from __future__ import annotations
 
-import logging
-from pathlib import Path
-from typing import Any, Callable, Dict
+from typing import Any, Dict, List
 
-from langchain_ollama import ChatOllama
-
-from app.tools.data_reader import format_destination_context, read_destination_data
-
-PlannerState = Dict[str, Any]
+from app.graph.state import TravelState
+from app.llm.ollama_client import get_llm
+from app.tools.data_reader import read_destination_data
+from app.utils.logger import log_event
 
 
-def setup_logger() -> logging.Logger:
+def _load_planner_prompt() -> str:
     """
-    Configure and return a file logger for planner agent observability.
-
-    Returns:
-        Configured logger instance.
+    Load the planner system prompt from file.
     """
-    logger = logging.getLogger("planner_agent")
-    logger.setLevel(logging.INFO)
+    from pathlib import Path
 
-    if not logger.handlers:
-        Path("logs").mkdir(exist_ok=True)
-        handler = logging.FileHandler("logs/planner_agent.log", encoding="utf-8")
-        formatter = logging.Formatter(
-            "%(asctime)s - %(levelname)s - %(name)s - %(message)s"
-        )
-        handler.setFormatter(formatter)
-        logger.addHandler(handler)
-
-    return logger
-
-
-logger = setup_logger()
-
-
-def load_planner_prompt() -> str:
-    """
-    Load the planner prompt using a path relative to this file.
-    """
-    project_root = Path(__file__).resolve().parents[1]
-    prompt_path = project_root / "prompts" / "planner_prompt.txt"
-
-    if not prompt_path.exists():
-        raise FileNotFoundError(f"Planner prompt file not found: {prompt_path}")
-
+    prompt_path = Path(__file__).resolve().parents[1] / "prompts" / "planner_prompt.txt"
     return prompt_path.read_text(encoding="utf-8")
 
 
-def build_planner_input(state: PlannerState) -> str:
+def _select_activities(
+    destination_data: Dict[str, Any],
+    preferences: List[str],
+    days: int,
+    max_activities_per_day: int = 2
+) -> List[Dict[str, Any]]:
     """
-    Build the text input passed to the planner model from shared state.
+    Build a structured itinerary from local destination activities.
 
-    Expected incoming state keys:
-        - user_request
-        - destination
-        - days
-        - travelers
-        - interests
-        - travel_style
-        - special_notes
-
-    Args:
-        state: Shared multi-agent state.
-
-    Returns:
-        Structured planner input text.
+    The planner uses local dataset activities and tries to prefer activities
+    whose type matches the user's preferences.
     """
-    user_request = state.get("user_request", "")
-    destination = state.get("destination", "")
-    days = state.get("days", "")
-    travelers = state.get("travelers", "")
-    interests = state.get("interests", [])
-    travel_style = state.get("travel_style", "not specified")
-    special_notes = state.get("special_notes", "No special notes provided.")
+    activities = destination_data.get("activities", [])
+    if not isinstance(activities, list):
+        activities = []
 
-    destination_data = read_destination_data(destination)
-    destination_context = format_destination_context(destination_data)
+    normalized_preferences = [str(pref).strip().lower() for pref in preferences]
 
-    interests_text = ", ".join(interests) if isinstance(interests, list) else str(interests)
+    matching = []
+    non_matching = []
+
+    for activity in activities:
+        activity_type = str(activity.get("type", "")).strip().lower()
+        if activity_type in normalized_preferences:
+            matching.append(activity)
+        else:
+            non_matching.append(activity)
+
+    ordered_activities = matching + non_matching
+
+    itinerary: List[Dict[str, Any]] = []
+    activity_index = 0
+
+    for day in range(1, days + 1):
+        day_activities: List[str] = []
+
+        for _ in range(max_activities_per_day):
+            if activity_index < len(ordered_activities):
+                day_activities.append(ordered_activities[activity_index]["name"])
+                activity_index += 1
+
+        if not day_activities:
+            day_activities = ["Free exploration"]
+
+        itinerary.append({
+            "day": day,
+            "activities": day_activities
+        })
+
+    return itinerary
+
+
+def _build_planner_user_message(
+    destination: str,
+    days: int,
+    preferences: List[str],
+    destination_data: Dict[str, Any],
+    itinerary: List[Dict[str, Any]]
+) -> str:
+    """
+    Build grounded user input for the planner LLM.
+    """
+    summary = destination_data.get("summary", "No summary available.")
+    areas_to_stay = destination_data.get("areas_to_stay", [])
+    transport_tips = destination_data.get("transport_tips", [])
+
+    itinerary_lines = []
+    for day_plan in itinerary:
+        day_number = day_plan.get("day", "?")
+        activities = day_plan.get("activities", [])
+        itinerary_lines.append(f"Day {day_number}: {', '.join(activities)}")
 
     return (
-        f"User travel request:\n{user_request}\n\n"
-        f"Trip details:\n"
-        f"- Destination: {destination}\n"
-        f"- Number of days: {days}\n"
-        f"- Number of travelers: {travelers}\n"
-        f"- Interests: {interests_text}\n"
-        f"- Travel style: {travel_style}\n"
-        f"- Special notes: {special_notes}\n\n"
-        f"Local destination data:\n{destination_context}\n"
+        f"Destination: {destination}\n"
+        f"Days: {days}\n"
+        f"Preferences: {', '.join(preferences) if preferences else 'Not specified'}\n\n"
+        f"Local destination summary:\n{summary}\n\n"
+        f"Suggested stay areas: {', '.join(areas_to_stay) if areas_to_stay else 'N/A'}\n"
+        f"Transport tips: {', '.join(transport_tips) if transport_tips else 'N/A'}\n\n"
+        f"Structured itinerary draft:\n" + "\n".join(itinerary_lines) + "\n\n"
+        "Using only the grounded information above, write a short travel plan summary "
+        "with a trip overview, the itinerary by day, and brief planning notes."
     )
 
 
-def create_planner_agent(
-    model_name: str = "qwen2.5:3b",
-    temperature: float = 0.2,
-) -> Callable[[PlannerState], PlannerState]:
+def _fallback_planner_output(
+    destination: str,
+    days: int,
+    preferences: List[str],
+    itinerary: List[Dict[str, Any]]
+) -> str:
     """
-    Create the Planner Agent callable.
-
-    The returned function reads current shared state, generates an initial itinerary draft,
-    and writes planner outputs back into shared state for downstream agents.
-
-    Args:
-        model_name: Ollama model name.
-        temperature: Model temperature.
-
-    Returns:
-        Planner node callable.
+    Fallback planner output if Ollama is unavailable.
     """
-    llm = ChatOllama(model=model_name, temperature=temperature)
-    system_prompt = load_planner_prompt()
+    lines = [
+        "Initial Trip Draft",
+        f"Destination: {destination}",
+        f"Duration: {days} days",
+        f"Preferences: {', '.join(preferences) if preferences else 'Not specified'}",
+        "",
+        "Draft Itinerary"
+    ]
 
-    def planner_node(state: PlannerState) -> PlannerState:
-        """
-        Execute the Planner Agent.
+    for day_plan in itinerary:
+        day_number = day_plan.get("day", "?")
+        activities = day_plan.get("activities", [])
+        lines.append(f"Day {day_number}:")
+        for activity in activities:
+            lines.append(f"- {activity}")
+        lines.append("")
 
-        Added/updated state keys:
-            - planner_output
-            - draft_itinerary
-            - planner_status
-            - planner_model
-            - current_stage
+    lines.append("Planning Notes:")
+    lines.append("- Generated from local destination data.")
+    lines.append("- Budget and validation will be handled by downstream agents.")
 
-        Args:
-            state: Shared workflow state.
+    return "\n".join(lines).strip()
 
-        Returns:
-            Updated shared state.
-        """
-        logger.info("Planner agent started.")
-        logger.info("Incoming planner state: %s", state)
 
-        planner_input = build_planner_input(state)
+def planner_agent(state: TravelState) -> TravelState:
+    """
+    Generate an initial structured itinerary using local destination data,
+    and produce a natural-language planner summary via Ollama.
 
-        messages = [
+    Updates:
+    - itinerary
+    - planner_output
+    - logs
+    """
+    logs = list(state.get("logs", []))
+    logs.append(log_event("Planner Agent", "Planner started"))
+
+    destination = state.get("destination", "")
+    days = state.get("days", 0)
+    preferences = state.get("preferences", [])
+
+    destination_data = read_destination_data(destination)
+
+    itinerary = _select_activities(
+        destination_data=destination_data,
+        preferences=preferences,
+        days=days,
+        max_activities_per_day=2
+    )
+
+    planner_output = ""
+
+    try:
+        llm = get_llm()
+        system_prompt = _load_planner_prompt()
+        user_message = _build_planner_user_message(
+            destination=destination,
+            days=days,
+            preferences=preferences,
+            destination_data=destination_data,
+            itinerary=itinerary
+        )
+
+        response = llm.invoke([
             ("system", system_prompt),
-            ("human", planner_input),
-        ]
+            ("human", user_message),
+        ])
 
-        response = llm.invoke(messages)
         planner_output = response.content if hasattr(response, "content") else str(response)
+        logs.append(log_event("Planner Agent", "Planner summary generated using Ollama"))
 
-        updated_state = dict(state)
-        updated_state["planner_output"] = planner_output
-        updated_state["draft_itinerary"] = planner_output
-        updated_state["planner_status"] = "completed"
-        updated_state["planner_model"] = model_name
-        updated_state["current_stage"] = "budget_agent"
+    except Exception as exc:
+        planner_output = _fallback_planner_output(
+            destination=destination,
+            days=days,
+            preferences=preferences,
+            itinerary=itinerary
+        )
+        logs.append(log_event("Planner Agent", f"Ollama unavailable, using fallback output: {exc}"))
 
-        logger.info("Planner agent completed successfully.")
-        logger.info("Planner output: %s", planner_output)
+    state["itinerary"] = itinerary
+    state["planner_output"] = planner_output
+    state["logs"] = logs + [
+        log_event("Planner Agent", f"Planner created itinerary for {days} day(s)")
+    ]
 
-        return updated_state
-
-    return planner_node
-
-
-if __name__ == "__main__":
-    demo_state: PlannerState = {
-        "user_request": (
-            "Plan a 3-day trip to Ella for 2 friends who like scenic views, hiking, "
-            "cafes, and relaxed travel."
-        ),
-        "destination": "Ella",
-        "days": 3,
-        "travelers": 2,
-        "interests": ["scenic views", "hiking", "cafes"],
-        "travel_style": "relaxed and budget-conscious",
-        "special_notes": "Keep the plan realistic and not too tiring.",
-    }
-
-    planner = create_planner_agent()
-    result = planner(demo_state)
-
-    print("\n=== PLANNER AGENT OUTPUT ===\n")
-    print(result["planner_output"])
-    print("\n=== NEXT STAGE ===")
-    print(result["current_stage"])
+    return state

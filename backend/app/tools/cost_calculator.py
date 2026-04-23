@@ -1,23 +1,11 @@
 from typing import Any, Dict, List
 
-from app.tools.data_reader import load_costs, load_destinations
+from app.tools.data_reader import load_costs, load_destinations, normalize_destination_key
 
 
 def calculate_trip_cost(destination: str, days: int, itinerary: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Calculate a structured cost estimate for a trip itinerary.
+    """Calculate a structured cost estimate for a trip itinerary."""
 
-    Args:
-        destination: Name of the destination in the local cost dataset.
-        days: Number of travel days requested by the user.
-        itinerary: List of day plans. Each item may contain an ``activities`` list.
-
-    Returns:
-        A dictionary containing ``cost_breakdown`` and ``total_cost`` values.
-
-    Raises:
-        ValueError: If the destination is unknown, days is invalid, or the
-            itinerary format is not safe to process.
-    """
     if not destination or not destination.strip():
         raise ValueError("Destination must be a non-empty string.")
 
@@ -27,19 +15,24 @@ def calculate_trip_cost(destination: str, days: int, itinerary: List[Dict[str, A
     if not isinstance(itinerary, list):
         raise ValueError("Itinerary must be a list of day plans.")
 
+    # normalize destination
+    destination_key = normalize_destination_key(destination)
+
     costs = load_costs()
     destinations = load_destinations()
 
-    if destination not in costs:
+    # use normalized key
+    if destination_key not in costs:
         raise ValueError(f"No cost data found for destination: {destination}")
 
-    if destination not in destinations:
+    if destination_key not in destinations:
         raise ValueError(f"No activity data found for destination: {destination}")
 
-    destination_costs = costs[destination]
+    destination_costs = costs[destination_key]
+
     activity_prices = {
         activity["name"]: float(activity.get("cost", 0.0))
-        for activity in destinations[destination].get("activities", [])
+        for activity in destinations[destination_key].get("activities", [])
     }
 
     accommodation_cost = float(destination_costs["hotel_per_night"]) * max(days - 1, 0)

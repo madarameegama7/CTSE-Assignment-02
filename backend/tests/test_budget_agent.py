@@ -11,7 +11,7 @@ def _base_state() -> dict:
         "budget": 400.0,
         "preferences": ["nature"],
         "itinerary": [
-            {"day": 1, "activities": ["Nine Arch Bridge", "Tea Plantation"]},
+            {"day": 1, "activities": ["Nine Arch Bridge", "Ella Rock"]},
             {"day": 2, "activities": ["Little Adam's Peak", "Ravana Falls"]},
         ],
         "cost_breakdown": {},
@@ -29,7 +29,7 @@ def test_calculate_trip_cost_returns_breakdown_and_total():
         destination="Ella",
         days=2,
         itinerary=[
-            {"day": 1, "activities": ["Nine Arch Bridge", "Tea Plantation"]},
+            {"day": 1, "activities": ["Nine Arch Bridge", "Ella Rock"]},
             {"day": 2, "activities": ["Little Adam's Peak", "Ravana Falls"]},
         ],
     )
@@ -38,9 +38,9 @@ def test_calculate_trip_cost_returns_breakdown_and_total():
         "accommodation": 80.0,
         "food": 50.0,
         "transport": 60.0,
-        "activities": 50.0,
+        "activities": 70.0,
     }
-    assert result["total_cost"] == 240.0
+    assert result["total_cost"] == 260.0
 
 
 def test_budget_agent_updates_state_without_changing_itinerary():
@@ -48,8 +48,8 @@ def test_budget_agent_updates_state_without_changing_itinerary():
 
     result = run_budget_agent(state)
 
-    assert result["cost_breakdown"]["activities"] == 50.0
-    assert result["total_cost"] == 240.0
+    assert result["cost_breakdown"]["activities"] == 70.0
+    assert result["total_cost"] == 260.0
     assert result["itinerary"] == state["itinerary"]
     assert any("[BudgetAgent]" in message for message in result["logs"])
 
