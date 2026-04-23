@@ -1,0 +1,66 @@
+{
+  "colombo": {
+    "destination": "Colombo",
+    "summary": "Colombo is the commercial capital of Sri Lanka with a mix of modern city life, shopping, food, and historical landmarks.",
+    "areas_to_stay": ["Colombo 03", "Colombo 07", "Fort"],
+    "transport_tips": ["Use PickMe or Uber", "Avoid rush hour traffic", "Tuk-tuks are common for short trips"],
+    "must_see_places": ["Galle Face Green", "Gangaramaya Temple", "Independence Square", "Colombo National Museum"],
+    "food_notes": ["Try Sri Lankan rice and curry", "Seafood restaurants are popular", "Street food is available near Galle Face"]
+  },
+  "kandy": {
+    "destination": "Kandy",
+    "summary": "Kandy is a cultural city surrounded by hills and is best known for the Temple of the Tooth Relic and scenic lake views.",
+    "areas_to_stay": ["Kandy City Center", "Lake Round", "Peradeniya"],
+    "transport_tips": ["Walking is possible in the city center", "Use tuk-tuks for uphill areas", "Traffic can be busy in town"],
+    "must_see_places": ["Temple of the Tooth", "Kandy Lake", "Royal Botanical Gardens", "Bahirawakanda Temple"],
+    "food_notes": ["Try traditional rice and curry", "Local sweets are common", "Buffet-style restaurants are easy to find"]
+  },
+  "ella": {
+    "destination": "Ella",
+    "summary": "Ella is a popular hill country destination with hiking spots, scenic train experiences, and a relaxed atmosphere.",
+    "areas_to_stay": ["Ella Town", "Near Nine Arch Bridge", "Passara Road area"],
+    "transport_tips": ["Walking and tuk-tuks are common", "The train ride is scenic", "Roads can be narrow and steep"],
+    "must_see_places": ["Nine Arch Bridge", "Little Adam's Peak", "Ella Rock", "Ravana Falls"],
+    "food_notes": ["Cafes with scenic views are popular", "Local rice and curry is easy to find", "Many guesthouses offer homemade meals"]
+  },
+  "nuwara_eliya": {
+    "destination": "Nuwara Eliya",
+    "summary": "Nuwara Eliya is known for cool weather, tea estates, colonial architecture, and gardens.",
+    "areas_to_stay": ["Town Center", "Lake Gregory area", "Blackpool area"],
+    "transport_tips": ["Use a car or tuk-tuk", "Distances can be longer than expected", "Weather can affect travel comfort"],
+    "must_see_places": ["Gregory Lake", "Hakgala Botanical Garden", "Tea Plantations", "Victoria Park"],
+    "food_notes": ["Hot meals and tea are popular", "Try local vegetable dishes", "Many hotels serve buffet meals"]
+  },
+  "galle": {
+    "destination": "Galle",
+    "summary": "Galle is a coastal city known for the Dutch Fort, colonial architecture, and nearby beaches.",
+    "areas_to_stay": ["Galle Fort", "Unawatuna nearby", "City Center"],
+    "transport_tips": ["Walk inside the fort", "Use tuk-tuks for short distances", "The coastal road can be busy"],
+    "must_see_places": ["Galle Fort", "Galle Lighthouse", "Dutch Reformed Church", "Maritime Museum"],
+    "food_notes": ["Seafood is popular", "Cafe culture is strong in the fort area", "Sri Lankan and fusion food are common"]
+  },
+  "mirissa": {
+    "destination": "Mirissa",
+    "summary": "Mirissa is a beach destination known for whale watching, beach relaxation, and nightlife.",
+    "areas_to_stay": ["Mirissa Beach area", "Weligama nearby"],
+    "transport_tips": ["Walking and tuk-tuks work well", "Beachside travel is simple", "Use early departures for whale watching"],
+    "must_see_places": ["Mirissa Beach", "Coconut Tree Hill", "Whale Watching", "Secret Beach"],
+    "food_notes": ["Seafood BBQ is common", "Beach cafes are popular", "Fresh juices are widely available"]
+  },
+  "sigiriya": {
+    "destination": "Sigiriya",
+    "summary": "Sigiriya is one of Sri Lanka's most famous cultural destinations, centered around the ancient rock fortress.",
+    "areas_to_stay": ["Sigiriya Town", "Dambulla nearby", "Habarana nearby"],
+    "transport_tips": ["Use a tuk-tuk or private vehicle", "Start climbing early to avoid heat", "Some attractions are spread out"],
+    "must_see_places": ["Sigiriya Rock Fortress", "Pidurangala Rock", "Dambulla Cave Temple", "Village Tour"],
+    "food_notes": ["Village-style meals are common", "Rice and curry is widely available", "Some hotels offer traditional dinners"]
+  },
+  "yala": {
+    "destination": "Yala",
+    "summary": "Yala is a wildlife travel destination best known for safari experiences and national park visits.",
+    "areas_to_stay": ["Yala Gate area", "Tissamaharama"],
+    "transport_tips": ["Safari jeeps are required inside the park", "Book safaris early", "Long road journeys are common"],
+    "must_see_places": ["Yala National Park", "Safari experience", "Nearby lakes and bird areas"],
+    "food_notes": ["Hotel dining is common", "Simple Sri Lankan meals are available", "Carry snacks for long outings"]
+  }
+}
