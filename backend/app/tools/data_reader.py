@@ -5,15 +5,14 @@ from pathlib import Path
 from typing import Any, Dict
 
 
-from pathlib import Path
-
 BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_FILE = BASE_DIR / "data" / "destinations.json"
+DESTINATIONS_FILE = BASE_DIR / "data" / "destinations.json"
+COSTS_FILE = BASE_DIR / "data" / "costs.json"
 
 
 def normalize_destination_key(destination: str) -> str:
     """
-    Convert a destination name into a normalized key used in destinations.json.
+    Convert a destination name into a normalized key used in local JSON files.
 
     Example:
         "Nuwara Eliya" -> "nuwara_eliya"
@@ -27,6 +26,9 @@ def normalize_destination_key(destination: str) -> str:
     Raises:
         ValueError: If destination is empty or only whitespace.
     """
+    if not isinstance(destination, str):
+        raise TypeError("destination must be a string")
+
     cleaned = destination.strip().lower()
     if not cleaned:
         raise ValueError("Destination cannot be empty.")
@@ -34,9 +36,45 @@ def normalize_destination_key(destination: str) -> str:
     return cleaned.replace(" ", "_")
 
 
+def load_destinations() -> Dict[str, Any]:
+    """
+    Load the full destinations dataset from the local JSON file.
+
+    Returns:
+        Dictionary of all destinations.
+
+    Raises:
+        FileNotFoundError: If the destinations file does not exist.
+        json.JSONDecodeError: If the JSON file is malformed.
+    """
+    if not DESTINATIONS_FILE.exists():
+        raise FileNotFoundError(f"Destinations data file not found: {DESTINATIONS_FILE}")
+
+    with DESTINATIONS_FILE.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def load_costs() -> Dict[str, Any]:
+    """
+    Load the full costs dataset from the local JSON file.
+
+    Returns:
+        Dictionary of all destination cost records.
+
+    Raises:
+        FileNotFoundError: If the costs file does not exist.
+        json.JSONDecodeError: If the JSON file is malformed.
+    """
+    if not COSTS_FILE.exists():
+        raise FileNotFoundError(f"Costs data file not found: {COSTS_FILE}")
+
+    with COSTS_FILE.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
 def read_destination_data(destination: str) -> Dict[str, Any]:
     """
-    Read destination data from the single JSON dataset file.
+    Read a single destination's data from the local dataset.
 
     Args:
         destination: Destination name such as 'Ella' or 'Kandy'.
@@ -44,19 +82,9 @@ def read_destination_data(destination: str) -> Dict[str, Any]:
     Returns:
         A dictionary of destination details. If the destination is not found,
         a safe fallback dictionary is returned.
-
-    Raises:
-        ValueError: If destination is empty.
-        FileNotFoundError: If the dataset file does not exist.
-        json.JSONDecodeError: If the JSON file is malformed.
     """
     key = normalize_destination_key(destination)
-
-    if not DATA_FILE.exists():
-        raise FileNotFoundError(f"Destination data file not found: {DATA_FILE}")
-
-    with DATA_FILE.open("r", encoding="utf-8") as file:
-        all_destinations: Dict[str, Any] = json.load(file)
+    all_destinations = load_destinations()
 
     if key not in all_destinations:
         return {
@@ -66,7 +94,8 @@ def read_destination_data(destination: str) -> Dict[str, Any]:
             "areas_to_stay": [],
             "transport_tips": [],
             "must_see_places": [],
-            "food_notes": []
+            "food_notes": [],
+            "activities": []
         }
 
     destination_data = dict(all_destinations[key])
