@@ -1,8 +1,23 @@
 from copy import deepcopy
+from pathlib import Path
 from typing import Any, Dict, List
 
 from app.graph.state import TravelState
 from app.utils.logger import log_event
+
+
+def _load_recommendation_prompt() -> str:
+    """
+    Load the recommendation agent prompt from the prompts directory.
+
+    Returns:
+        Prompt text as a string.
+
+    Raises:
+        FileNotFoundError: If the prompt file does not exist.
+    """
+    prompt_path = Path(__file__).resolve().parents[1] / "prompts" / "recommendation_prompt.txt"
+    return prompt_path.read_text(encoding="utf-8").strip()
 
 
 def _reduce_activities(
@@ -60,6 +75,11 @@ def recommendation_agent(state: TravelState) -> TravelState:
     """
     Improve an invalid travel plan by making conservative itinerary adjustments.
 
+    Runtime design note:
+    - The recommendation agent uses its prompt file as an agent contract.
+    - Actual recommendation behavior is deterministic and rule-based so that
+      changes remain explainable, safe, and easy to validate.
+
     Important:
     - This agent does NOT recalculate budget.
     - This agent does NOT save the final output file.
@@ -68,6 +88,21 @@ def recommendation_agent(state: TravelState) -> TravelState:
     """
     logs = list(state.get("logs", []))
     logs.append(log_event("Recommendation Agent", "Recommendation step started"))
+
+    try:
+        prompt_text = _load_recommendation_prompt()
+        logs.append(
+            log_event(
+                "Recommendation Agent",
+                "Recommendation contract loaded from recommendation_prompt.txt in deterministic mode",
+            )
+        )
+        state["recommendation_prompt_contract"] = prompt_text
+    except FileNotFoundError as exc:
+        logs.append(
+            log_event("Recommendation Agent", f"Recommendation prompt file missing: {exc}")
+        )
+        state["recommendation_prompt_contract"] = ""
 
     state["recommendation_attempts"] = state.get("recommendation_attempts", 0) + 1
 

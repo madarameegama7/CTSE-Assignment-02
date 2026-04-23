@@ -58,6 +58,7 @@ def test_recommendation_agent_reduces_budget():
     assert result["itinerary"][1]["activities"] == ["Little Adam's Peak"]
     assert any("lower the total cost" in change.lower() for change in result["recommended_changes"])
     assert result["output_file"] is None
+    assert result["recommendation_prompt_contract"] != ""
 
 
 def test_recommendation_agent_reduces_too_many_activities():

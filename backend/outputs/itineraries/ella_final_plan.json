@@ -1,7 +1,7 @@
 {
     "destination": "Ella",
     "days": 2,
-    "budget": 50.0,
+    "budget": 400.0,
     "preferences": [
         "nature"
     ],
@@ -9,30 +9,28 @@
         {
             "day": 1,
             "activities": [
-                "Nine Arch Bridge"
+                "Nine Arch Bridge",
+                "Ravana Falls"
             ]
         },
         {
             "day": 2,
             "activities": [
-                "Little Adam's Peak"
+                "Little Adam's Peak",
+                "Ella Rock"
             ]
         }
     ],
-    "planner_output": "Initial Trip Draft\nDestination: Ella, Sri Lanka\nDuration: 2 days\nTravelers: 4 adults\nInterests: Nature, hiking, scenic train rides\n\nAssumptions:\n- The train ride to Nine Arch Bridge is included in the itinerary.\n- Local transportation such as tuk-tuks and walking will be used for day-to-day travel within Ella Town and other locations.\n\nDraft Itinerary\nDay 1:\n- Morning: Arrive at Nine Arch Bridge, explore scenic area with hiking trails leading up to Ravana Falls. Enjoy a leisurely walk through the forest.\n- Afternoon: Visit Ravana Falls, take in the natural beauty of Sri Lanka's waterfalls. Consider hiring a local guide for additional insights into the area\u2019s history and flora/fauna.\n- Evening: Return to Ella Town or nearby accommodations.\n\nDay 2:\n- Morning: Take the scenic train ride from Nine Arch Bridge to Little Adam's Peak station (approximately 1 hour). From there, hike up to Little Adam's Peak for breathtaking views of Sri Lanka. \n- Afternoon: Explore Ella Rock and its surrounding area, including local markets and shops.\n- Evening: Return to Ella Town or nearby accommodations.\n\nPlanning Notes for Budget Agent:\n- The train ride is included in the itinerary as part of the Nine Arch Bridge visit.\n- Local transportation costs will be covered by tuk-tuks and walking within Ella Town. \n- Additional expenses may include meals, entrance fees at attractions, and any souvenirs or local purchases.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that all travel arrangements are confirmed with reliable local operators.\n- Confirm the availability of guided tours for Ravana Falls and Little Adam's Peak.\n- Check weather conditions to ensure safety during outdoor activities.\n- Verify accommodation options within Ella Town, ensuring they meet traveler needs and preferences.\n\nPlanning Notes for Recommendation Agent:\n- Suggest additional hiking trails in the area or nearby national parks based on traveler interests.\n- Recommend local restaurants that offer authentic Sri Lankan cuisine.\n- Propose alternative transportation methods such as renting a scooter if tuk-tuks are not available.",
+    "planner_output": "Initial Trip Draft\nDestination: Ella, Sri Lanka\nDuration: 2 days\nTravelers: 1 person\nInterests: nature\n\nAssumptions:\n- The train ride to Nine Arch Bridge is included in the travel package.\n- There are no specific accommodations provided; a local hotel or guesthouse will be chosen based on availability and preferences.\n\nDraft Itinerary\nDay 1:\n- Morning: Board the scenic train from Ella Town to Nine Arch Bridge, arriving at Ravana Falls. Enjoy the natural beauty of the area.\n- Afternoon: Visit Ravana Falls for a refreshing swim in the waterfalls or explore nearby hiking trails.\n- Evening: Return to Ella Town and enjoy dinner at a local restaurant.\n\nDay 2:\n- Morning: Drive from Ella Town to Little Adam's Peak, taking in the scenic views along the way. Arrive early to avoid crowds.\n- Afternoon: Hike up to Little Adam's Peak for panoramic views of the surrounding countryside.\n- Evening: Return to Ella Town and enjoy a leisurely evening exploring Passara Road area or relaxing at a local spa.\n\nPlanning Notes for Budget Agent:\n- The train ride is included in the travel package, so no additional cost needs to be considered for this leg of the trip. \n- Accommodation costs will need to be estimated based on availability.\n- Transportation within Ella Town and between attractions can be arranged via tuk-tuks or walking.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that transportation options are available and reliable, especially during peak tourist seasons.\n- Confirm that all activities align with the traveler's interest in nature.\n- Validate that there is sufficient time to fully enjoy each attraction without feeling rushed.\n\nPlanning Notes for Recommendation Agent:\n- Recommend a local tour guide or experienced driver who can provide additional insights into the area.\n- Suggest alternative hiking trails if Ravana Falls becomes too crowded, ensuring they are safe and suitable for solo travelers.",
     "cost_breakdown": {
         "accommodation": 80.0,
         "food": 50.0,
         "transport": 60.0,
-        "activities": 35.0
+        "activities": 70.0
     },
-    "total_cost": 225.0,
-    "validation_status": "INVALID",
-    "validation_errors": [
-        "Budget exceeded by 175.00. Total cost is 225.00, budget is 50.00."
-    ],
-    "recommended_changes": [
-        "Reduced number of paid activities to help lower the total cost."
-    ],
-    "recommendation_attempts": 1
+    "total_cost": 260.0,
+    "validation_status": "VALID",
+    "validation_errors": [],
+    "recommended_changes": [],
+    "recommendation_attempts": 0
 }

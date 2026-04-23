@@ -19,5 +19,8 @@ class TravelState(TypedDict, total=False):
     recommended_changes: List[str]
     output_file: Optional[str]
 
+    validator_prompt_contract: str
+    recommendation_prompt_contract: str
+
     recommendation_attempts: int
     logs: List[str]
