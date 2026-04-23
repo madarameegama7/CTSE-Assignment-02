@@ -1,3 +1,5 @@
+import os
+
 from app.models.request_models import TripRequest
 from app.graph.workflow import run_travel_workflow
 
@@ -21,6 +23,8 @@ def test_workflow_generates_complete_result():
     assert isinstance(result["cost_breakdown"], dict)
     assert isinstance(result["logs"], list)
     assert result["validation_status"] in ["VALID", "INVALID"]
+    assert result["output_file"] is not None
+    assert os.path.exists(result["output_file"])
 
 
 def test_workflow_triggers_invalid_or_recommendation_path():
@@ -35,4 +39,7 @@ def test_workflow_triggers_invalid_or_recommendation_path():
 
     assert result["validation_status"] == "INVALID"
     assert isinstance(result["logs"], list)
-    assert any("Recommendation Agent" in message or "Maximum recommendation attempts" in message for message in result["logs"])
+    assert any(
+        "Recommendation Agent" in message or "Maximum recommendation attempts" in message
+        for message in result["logs"]
+    )

@@ -1,9 +1,9 @@
 from langgraph.graph import StateGraph, END
 
 from app.graph.state import TravelState
-from app.graph.router import should_recommend
 from app.models.request_models import TripRequest
 from app.utils.logger import log_event
+from app.tools.file_writer import write_itinerary_to_file
 
 from app.agents.planner_agent import planner_agent
 from app.agents.budget_agent import run_budget_agent
@@ -77,8 +77,36 @@ def build_travel_graph():
 travel_graph = build_travel_graph()
 
 
+def _save_final_output(state: TravelState) -> TravelState:
+    """
+    Save the final workflow result only after final budget calculation
+    and final validation have completed.
+    """
+    final_output = {
+        "destination": state.get("destination"),
+        "days": state.get("days"),
+        "budget": state.get("budget"),
+        "preferences": state.get("preferences"),
+        "itinerary": state.get("itinerary"),
+        "planner_output": state.get("planner_output"),
+        "cost_breakdown": state.get("cost_breakdown"),
+        "total_cost": state.get("total_cost"),
+        "validation_status": state.get("validation_status"),
+        "validation_errors": state.get("validation_errors"),
+        "recommended_changes": state.get("recommended_changes"),
+        "recommendation_attempts": state.get("recommendation_attempts"),
+    }
+
+    output_filename = f"{str(state.get('destination', 'trip')).lower()}_final_plan.json"
+    output_file = write_itinerary_to_file(final_output, output_filename)
+    state["output_file"] = output_file
+    state["logs"].append(log_event("System", f"Final output saved to {output_file}"))
+    return state
+
+
 def run_travel_workflow(request: TripRequest) -> TravelState:
     initial_state = _build_initial_state(request)
     final_state = travel_graph.invoke(initial_state)
+    final_state = _save_final_output(final_state)
     final_state["logs"].append(log_event("System", "Workflow completed"))
     return final_state
