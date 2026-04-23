@@ -76,7 +76,7 @@ const InputForm = ({ onSubmit, isLoading }) => {
             />
           </div>
           <div className="group">
-            <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Budget ($)</label>
+            <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Budget (Rs.)</label>
             <input
               type="number"
               className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"

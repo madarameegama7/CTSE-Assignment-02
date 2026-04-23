@@ -16,12 +16,12 @@ const BudgetBreakdown = ({ breakdown, total }) => {
         {Object.entries(breakdown).map(([category, amount]) => (
           <div key={category} className="flex justify-between items-center text-sm bg-slate-50/50 p-2.5 rounded-lg border border-slate-100">
             <span className="capitalize text-slate-600 font-medium">{category}</span>
-            <span className="font-semibold font-outfit text-slate-900">${amount}</span>
+            <span className="font-semibold font-outfit text-slate-900">Rs. {amount}</span>
           </div>
         ))}
         <div className="pt-4 border-t border-slate-200/60 mt-5 flex justify-between items-center bg-gradient-to-r from-teal-50 to-emerald-50 p-4 rounded-xl shadow-sm border border-teal-100/50">
           <span className="font-semibold text-teal-900 tracking-wide">Total Cost</span>
-          <span className="font-bold text-2xl font-outfit text-teal-700">${total}</span>
+          <span className="font-bold text-2xl font-outfit text-teal-700">Rs. {total}</span>
         </div>
       </div>
     </div>

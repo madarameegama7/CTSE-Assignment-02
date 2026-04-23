@@ -103,7 +103,7 @@ const Home = () => {
                   </div>
                   <div className="md:border-r border-slate-200/50 px-2 md:px-4">
                     <p className="text-sm text-slate-500 font-medium tracking-wide uppercase">Budget</p>
-                    <p className="text-xl font-bold font-outfit text-slate-900 mt-1"><span className="text-lg font-medium text-slate-600">$</span>{result.budget}</p>
+                    <p className="text-xl font-bold font-outfit text-slate-900 mt-1"><span className="text-lg font-medium text-slate-600">Rs. </span>{result.budget}</p>
                   </div>
                   <div className="px-2 md:px-4">
                     <p className="text-sm text-slate-500 font-medium tracking-wide uppercase mb-1">Preferences</p>
