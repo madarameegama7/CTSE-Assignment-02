@@ -21,9 +21,11 @@ const AgentLogs = ({ logs, outputFile }) => {
           {logs.map((log, index) => {
             // Simple color coding based on keywords
             let textColor = "text-gray-300";
+            const lower = log.toLowerCase();
             if (log.includes("[System]")) textColor = "text-blue-400";
-            if (log.toLowerCase().includes("error") || log.toLowerCase().includes("failed")) textColor = "text-red-400";
-            if (log.toLowerCase().includes("valid") || log.toLowerCase().includes("success")) textColor = "text-green-400";
+            if (lower.includes("error") || lower.includes("failed")) textColor = "text-red-400";
+            if (lower.includes("validated successfully") || lower.includes("success")) textColor = "text-green-400";
+            if (lower.includes("invalid")) textColor = "text-yellow-400";
             
             return (
               <li key={index} className={textColor}>

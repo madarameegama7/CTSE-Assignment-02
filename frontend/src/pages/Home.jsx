@@ -21,7 +21,11 @@ const Home = () => {
       const response = await planTrip(data);
       setResult(response);
     } catch (err) {
-      setError('Could not connect to backend. Please make sure FastAPI server is running at http://127.0.0.1:8000.');
+      setError(
+        err?.response?.data?.detail
+          ? `Backend error: ${JSON.stringify(err.response.data.detail)}`
+          : 'Could not connect to backend. Please make sure the FastAPI server is running at http://127.0.0.1:8000.'
+      );
     } finally {
       setIsLoading(false);
     }
@@ -93,7 +97,7 @@ const Home = () => {
                   <div className="px-4">
                     <p className="text-sm text-gray-500 font-medium">Preferences</p>
                     <div className="flex flex-wrap gap-1 mt-1">
-                      {result.preferences.map((p, i) => (
+                      {(result.preferences || []).map((p, i) => (
                         <span key={i} className="inline-block bg-indigo-50 text-indigo-700 text-xs px-2 py-0.5 rounded border border-indigo-100">
                           {p}
                         </span>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BudgetBreakdown = ({ breakdown, total }) => {
-  if (!breakdown) return null;
+  if (!breakdown || Object.keys(breakdown).length === 0) return null;
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">

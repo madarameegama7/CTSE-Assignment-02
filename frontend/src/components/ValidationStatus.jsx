@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ValidationStatus = ({ status, errors, recommendedChanges }) => {
+  if (!status) return null;
   const isValid = status === 'VALID';
 
   return (
