@@ -1,3 +1,4 @@
+import utils.session
 from fastapi import FastAPI
 from app.api.routes import router
 from app.utils.logger import setup_logger

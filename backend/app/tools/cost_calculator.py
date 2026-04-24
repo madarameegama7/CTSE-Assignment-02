@@ -1,6 +1,6 @@
 from typing import Any, Dict, List
 
-from app.tools.data_reader import load_costs, load_destinations
+from app.tools.data_reader import load_costs, load_destinations, normalize_destination_key
 
 
 def calculate_trip_cost(destination: str, days: int, itinerary: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -27,19 +27,22 @@ def calculate_trip_cost(destination: str, days: int, itinerary: List[Dict[str, A
     if not isinstance(itinerary, list):
         raise ValueError("Itinerary must be a list of day plans.")
 
+    # Normalize destination key for lookup in destinations.json
+    normalized_dest = normalize_destination_key(destination)
+    
     costs = load_costs()
     destinations = load_destinations()
 
     if destination not in costs:
         raise ValueError(f"No cost data found for destination: {destination}")
 
-    if destination not in destinations:
+    if normalized_dest not in destinations:
         raise ValueError(f"No activity data found for destination: {destination}")
 
     destination_costs = costs[destination]
     activity_prices = {
         activity["name"]: float(activity.get("cost", 0.0))
-        for activity in destinations[destination].get("activities", [])
+        for activity in destinations[normalized_dest].get("activities", [])
     }
 
     accommodation_cost = float(destination_costs["hotel_per_night"]) * max(days - 1, 0)

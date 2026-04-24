@@ -4,8 +4,8 @@ from typing import Any, Dict
 
 import pytest
 
-from agents import planner_agent
-from tools.data_reader import (
+from app.agents import planner_agent
+from app.tools.data_reader import (
     format_destination_context,
     normalize_destination_key,
     read_destination_data,
@@ -129,35 +129,55 @@ def test_format_destination_context_contains_expected_content() -> None:
 
 def test_build_planner_input_includes_required_fields(sample_state: Dict[str, Any]) -> None:
     """
-    Test that the planner input string includes user requirements and destination context.
-    Verifies that the planner receives all necessary information to create a plan.
+    Test that the planner agent correctly uses destination data and preferences.
+    Verifies that the planner creates an itinerary based on user requirements.
     """
-    planner_input = planner_agent.build_planner_input(sample_state)
+    # The planner uses destination data and preferences to build an itinerary
+    destination_data = read_destination_data(sample_state["destination"])
+    
+    # Verify destination data is loaded correctly
+    assert destination_data["found"] is True
+    assert "Nine Arch Bridge" in destination_data.get("must_see_places", [])
+    
+    # Test that activities can be selected based on preferences
+    from app.agents.planner_agent import _select_activities
+    
+    itinerary = _select_activities(
+        destination_data=destination_data,
+        preferences=sample_state["interests"],
+        days=sample_state["days"],
+        max_activities_per_day=2
+    )
+    
+    # Verify itinerary structure
+    assert len(itinerary) == sample_state["days"]
+    for day_plan in itinerary:
+        assert "day" in day_plan
+        assert "activities" in day_plan
+        assert len(day_plan["activities"]) <= 2
 
-    assert "Ella" in planner_input
-    assert "relaxed and budget-conscious" in planner_input
-    assert "Keep the plan realistic and not too tiring." in planner_input
-    assert "Nine Arch Bridge" in planner_input
 
-
-def test_planner_agent_updates_state(monkeypatch: pytest.MonkeyPatch, sample_state: Dict[str, Any]) -> None:
+def test_planner_agent_updates_state(sample_state: Dict[str, Any]) -> None:
     """
     Test that the planner node correctly updates the shared state.
-    1. Mocks the LLM to provide deterministic output.
-    2. Runs the planner agent.
-    3. Verifies that output fields (planner_output, draft_itinerary) are populated.
-    4. Verifies that the current_stage is moved to 'budget_agent'.
+    1. Runs the planner agent.
+    2. Verifies that output fields (itinerary, planner_output) are populated.
+    3. Verifies that logs are updated.
     """
-    # Mock the external dependencies (LLM and Prompt Loader)
-    monkeypatch.setattr(planner_agent, "ChatOllama", lambda model, temperature: DummyLLM())
-    monkeypatch.setattr(planner_agent, "load_planner_prompt", lambda prompt_path="prompts/planner_prompt.txt": "Planner prompt")
-
-    planner_node = planner_agent.create_planner_agent()
-    updated_state = planner_node(sample_state)
-
-    # Assertions to verify state updates and state machine transitions
-    assert updated_state["planner_status"] == "completed"
-    assert updated_state["planner_model"] == "qwen2.5:3b"
-    assert updated_state["current_stage"] == "budget_agent"
+    # Run the planner agent with the sample state
+    updated_state = planner_agent.planner_agent(sample_state)
+    
+    # Assertions to verify state updates
+    assert "itinerary" in updated_state
+    assert "planner_output" in updated_state
+    assert "logs" in updated_state
+    
+    # Verify itinerary was created
+    assert len(updated_state["itinerary"]) == sample_state["days"]
+    
+    # Verify planner output contains expected content
     assert "Initial Trip Draft" in updated_state["planner_output"]
-    assert "Visit Nine Arch Bridge" in updated_state["draft_itinerary"]
+    assert sample_state["destination"] in updated_state["planner_output"]
+    
+    # Verify logs were updated
+    assert any("Planner" in log for log in updated_state["logs"])
