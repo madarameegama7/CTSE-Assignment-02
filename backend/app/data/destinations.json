@@ -5,13 +5,7 @@
     "areas_to_stay": ["Colombo 03", "Colombo 07", "Fort"],
     "transport_tips": ["Use PickMe or Uber", "Avoid rush hour traffic", "Tuk-tuks are common for short trips"],
     "must_see_places": ["Galle Face Green", "Gangaramaya Temple", "Independence Square", "Colombo National Museum"],
-    "food_notes": ["Try Sri Lankan rice and curry", "Seafood restaurants are popular", "Street food is available near Galle Face"],
-    "activities": [
-      { "name": "Galle Face Green", "type": "relax", "cost": 0 },
-      { "name": "Gangaramaya Temple", "type": "culture", "cost": 10 },
-      { "name": "Independence Square", "type": "history", "cost": 0 },
-      { "name": "Colombo National Museum", "type": "culture", "cost": 12 }
-    ]
+    "food_notes": ["Try Sri Lankan rice and curry", "Seafood restaurants are popular", "Street food is available near Galle Face"]
   },
   "kandy": {
     "destination": "Kandy",
@@ -19,13 +13,7 @@
     "areas_to_stay": ["Kandy City Center", "Lake Round", "Peradeniya"],
     "transport_tips": ["Walking is possible in the city center", "Use tuk-tuks for uphill areas", "Traffic can be busy in town"],
     "must_see_places": ["Temple of the Tooth", "Kandy Lake", "Royal Botanical Gardens", "Bahirawakanda Temple"],
-    "food_notes": ["Try traditional rice and curry", "Local sweets are common", "Buffet-style restaurants are easy to find"],
-    "activities": [
-      { "name": "Temple of the Tooth", "type": "culture", "cost": 12 },
-      { "name": "Kandy Lake", "type": "relax", "cost": 0 },
-      { "name": "Royal Botanical Gardens", "type": "nature", "cost": 8 },
-      { "name": "Bahirawakanda Temple", "type": "culture", "cost": 5 }
-    ]
+    "food_notes": ["Try traditional rice and curry", "Local sweets are common", "Buffet-style restaurants are easy to find"]
   },
   "ella": {
     "destination": "Ella",
@@ -33,13 +21,7 @@
     "areas_to_stay": ["Ella Town", "Near Nine Arch Bridge", "Passara Road area"],
     "transport_tips": ["Walking and tuk-tuks are common", "The train ride is scenic", "Roads can be narrow and steep"],
     "must_see_places": ["Nine Arch Bridge", "Little Adam's Peak", "Ella Rock", "Ravana Falls"],
-    "food_notes": ["Cafes with scenic views are popular", "Local rice and curry is easy to find", "Many guesthouses offer homemade meals"],
-    "activities": [
-      { "name": "Nine Arch Bridge", "type": "nature", "cost": 20 },
-      { "name": "Little Adam's Peak", "type": "hiking", "cost": 15 },
-      { "name": "Ella Rock", "type": "hiking", "cost": 25 },
-      { "name": "Ravana Falls", "type": "nature", "cost": 10 }
-    ]
+    "food_notes": ["Cafes with scenic views are popular", "Local rice and curry is easy to find", "Many guesthouses offer homemade meals"]
   },
   "nuwara_eliya": {
     "destination": "Nuwara Eliya",
@@ -47,13 +29,7 @@
     "areas_to_stay": ["Town Center", "Lake Gregory area", "Blackpool area"],
     "transport_tips": ["Use a car or tuk-tuk", "Distances can be longer than expected", "Weather can affect travel comfort"],
     "must_see_places": ["Gregory Lake", "Hakgala Botanical Garden", "Tea Plantations", "Victoria Park"],
-    "food_notes": ["Hot meals and tea are popular", "Try local vegetable dishes", "Many hotels serve buffet meals"],
-    "activities": [
-      { "name": "Gregory Lake", "type": "relax", "cost": 5 },
-      { "name": "Hakgala Botanical Garden", "type": "nature", "cost": 10 },
-      { "name": "Tea Plantations", "type": "relax", "cost": 8 },
-      { "name": "Victoria Park", "type": "nature", "cost": 6 }
-    ]
+    "food_notes": ["Hot meals and tea are popular", "Try local vegetable dishes", "Many hotels serve buffet meals"]
   },
   "galle": {
     "destination": "Galle",
@@ -61,13 +37,7 @@
     "areas_to_stay": ["Galle Fort", "Unawatuna nearby", "City Center"],
     "transport_tips": ["Walk inside the fort", "Use tuk-tuks for short distances", "The coastal road can be busy"],
     "must_see_places": ["Galle Fort", "Galle Lighthouse", "Dutch Reformed Church", "Maritime Museum"],
-    "food_notes": ["Seafood is popular", "Cafe culture is strong in the fort area", "Sri Lankan and fusion food are common"],
-    "activities": [
-      { "name": "Galle Fort", "type": "history", "cost": 0 },
-      { "name": "Galle Lighthouse", "type": "relax", "cost": 0 },
-      { "name": "Dutch Reformed Church", "type": "culture", "cost": 5 },
-      { "name": "Maritime Museum", "type": "culture", "cost": 7 }
-    ]
+    "food_notes": ["Seafood is popular", "Cafe culture is strong in the fort area", "Sri Lankan and fusion food are common"]
   },
   "mirissa": {
     "destination": "Mirissa",
@@ -75,13 +45,7 @@
     "areas_to_stay": ["Mirissa Beach area", "Weligama nearby"],
     "transport_tips": ["Walking and tuk-tuks work well", "Beachside travel is simple", "Use early departures for whale watching"],
     "must_see_places": ["Mirissa Beach", "Coconut Tree Hill", "Whale Watching", "Secret Beach"],
-    "food_notes": ["Seafood BBQ is common", "Beach cafes are popular", "Fresh juices are widely available"],
-    "activities": [
-      { "name": "Mirissa Beach", "type": "relax", "cost": 0 },
-      { "name": "Coconut Tree Hill", "type": "nature", "cost": 0 },
-      { "name": "Whale Watching", "type": "adventure", "cost": 35 },
-      { "name": "Secret Beach", "type": "relax", "cost": 5 }
-    ]
+    "food_notes": ["Seafood BBQ is common", "Beach cafes are popular", "Fresh juices are widely available"]
   },
   "sigiriya": {
     "destination": "Sigiriya",
@@ -89,13 +53,7 @@
     "areas_to_stay": ["Sigiriya Town", "Dambulla nearby", "Habarana nearby"],
     "transport_tips": ["Use a tuk-tuk or private vehicle", "Start climbing early to avoid heat", "Some attractions are spread out"],
     "must_see_places": ["Sigiriya Rock Fortress", "Pidurangala Rock", "Dambulla Cave Temple", "Village Tour"],
-    "food_notes": ["Village-style meals are common", "Rice and curry is widely available", "Some hotels offer traditional dinners"],
-    "activities": [
-      { "name": "Sigiriya Rock Fortress", "type": "history", "cost": 30 },
-      { "name": "Pidurangala Rock", "type": "hiking", "cost": 10 },
-      { "name": "Dambulla Cave Temple", "type": "culture", "cost": 8 },
-      { "name": "Village Tour", "type": "culture", "cost": 15 }
-    ]
+    "food_notes": ["Village-style meals are common", "Rice and curry is widely available", "Some hotels offer traditional dinners"]
   },
   "yala": {
     "destination": "Yala",
@@ -103,11 +61,6 @@
     "areas_to_stay": ["Yala Gate area", "Tissamaharama"],
     "transport_tips": ["Safari jeeps are required inside the park", "Book safaris early", "Long road journeys are common"],
     "must_see_places": ["Yala National Park", "Safari experience", "Nearby lakes and bird areas"],
-    "food_notes": ["Hotel dining is common", "Simple Sri Lankan meals are available", "Carry snacks for long outings"],
-    "activities": [
-      { "name": "Yala National Park", "type": "wildlife", "cost": 25 },
-      { "name": "Safari experience", "type": "adventure", "cost": 40 },
-      { "name": "Nearby lakes and bird areas", "type": "nature", "cost": 10 }
-    ]
+    "food_notes": ["Hotel dining is common", "Simple Sri Lankan meals are available", "Carry snacks for long outings"]
   }
 }

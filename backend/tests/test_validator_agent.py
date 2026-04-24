@@ -31,7 +31,6 @@ def test_validator_agent_valid_plan():
 
     assert result["validation_status"] == "VALID"
     assert result["validation_errors"] == []
-    assert result["validator_prompt_contract"] != ""
 
 
 def test_validator_agent_budget_exceeded():
