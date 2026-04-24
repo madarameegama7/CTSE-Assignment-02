@@ -101,3 +101,44 @@ def format_destination_context(destination_data: Dict[str, Any]) -> str:
         f"Must-see places: {', '.join(must_see_places) if must_see_places else 'N/A'}\n"
         f"Food notes: {', '.join(food_notes) if food_notes else 'N/A'}"
     )
+
+
+# --- Cost and Destination Data Loaders ---
+
+COSTS_FILE = BASE_DIR / "data" / "costs.json"
+
+
+def load_costs() -> Dict[str, Any]:
+    """
+    Load cost data from the costs JSON file.
+
+    Returns:
+        A dictionary mapping destination names to cost information.
+
+    Raises:
+        FileNotFoundError: If the costs file does not exist.
+        json.JSONDecodeError: If the JSON file is malformed.
+    """
+    if not COSTS_FILE.exists():
+        raise FileNotFoundError(f"Costs data file not found: {COSTS_FILE}")
+
+    with COSTS_FILE.open("r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def load_destinations() -> Dict[str, Any]:
+    """
+    Load all destination data from the destinations JSON file.
+
+    Returns:
+        A dictionary mapping normalized destination keys to destination data.
+
+    Raises:
+        FileNotFoundError: If the destinations file does not exist.
+        json.JSONDecodeError: If the JSON file is malformed.
+    """
+    if not DATA_FILE.exists():
+        raise FileNotFoundError(f"Destination data file not found: {DATA_FILE}")
+
+    with DATA_FILE.open("r", encoding="utf-8") as file:
+        return json.load(file)
