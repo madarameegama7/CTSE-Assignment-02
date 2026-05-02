@@ -164,3 +164,48 @@
 2026-05-02 20:40:31 | INFO | [System] Validation passed, ending workflow
 2026-05-02 20:40:31 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
 2026-05-02 20:40:31 | INFO | [System] Workflow completed
+2026-05-02 20:48:18 | INFO | [System] Workflow started
+2026-05-02 20:48:18 | INFO | [Planner Agent] Planner started
+2026-05-02 20:48:31 | INFO | [Planner Agent] Planner summary generated using Ollama
+2026-05-02 20:48:31 | INFO | [Planner Agent] Planner created itinerary for 2 day(s)
+2026-05-02 20:48:31 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 20:48:31 | INFO | [BudgetAgent] Cost calculation failed: No activity data found for destination: puttalam
+2026-05-02 20:48:31 | INFO | [Validator Agent] Validation started
+2026-05-02 20:48:31 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 20:48:31 | INFO | [Validator Agent] Plan validated successfully
+2026-05-02 20:48:31 | INFO | [System] Validation passed, ending workflow
+2026-05-02 20:48:31 | INFO | [System] Final output saved to outputs\itineraries\puttalam_final_plan.json
+2026-05-02 20:48:31 | INFO | [System] Workflow completed
+2026-05-02 20:49:27 | INFO | [System] Workflow started
+2026-05-02 20:49:27 | INFO | [Planner Agent] Planner started
+2026-05-02 20:49:35 | INFO | [Planner Agent] Planner summary generated using Ollama
+2026-05-02 20:49:35 | INFO | [Planner Agent] Planner created itinerary for 2 day(s)
+2026-05-02 20:49:35 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 20:49:35 | INFO | [BudgetAgent] Total trip cost calculated: 45000.0
+2026-05-02 20:49:35 | INFO | [Validator Agent] Validation started
+2026-05-02 20:49:35 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 20:49:35 | INFO | [Validator Agent] Plan validated successfully
+2026-05-02 20:49:35 | INFO | [System] Validation passed, ending workflow
+2026-05-02 20:49:35 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
+2026-05-02 20:49:35 | INFO | [System] Workflow completed
+2026-05-02 21:07:51 | INFO | [System] Workflow started
+2026-05-02 21:07:51 | INFO | [Planner Agent] Planner started
+2026-05-02 21:08:04 | INFO | [Planner Agent] Planner summary generated using Ollama
+2026-05-02 21:08:04 | INFO | [Planner Agent] Planner created itinerary for 2 day(s)
+2026-05-02 21:08:04 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 21:08:04 | INFO | [BudgetAgent] Total trip cost calculated: 103000.0
+2026-05-02 21:08:04 | INFO | [Validator Agent] Validation started
+2026-05-02 21:08:04 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 21:08:04 | INFO | [Validator Agent] Plan invalid: Budget exceeded by 58000.00. Total cost is 103000.00, budget is 45000.00.
+2026-05-02 21:08:04 | INFO | [System] Routing to Recommendation Agent
+2026-05-02 21:08:04 | INFO | [Recommendation Agent] Recommendation step started
+2026-05-02 21:08:04 | INFO | [Recommendation Agent] Recommendation contract loaded from recommendation_prompt.txt in deterministic mode
+2026-05-02 21:08:04 | INFO | [Recommendation Agent] Recommendation complete. Updated itinerary sent to Budget Agent for recalculation
+2026-05-02 21:08:04 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 21:08:04 | INFO | [BudgetAgent] Total trip cost calculated: 78000.0
+2026-05-02 21:08:04 | INFO | [Validator Agent] Validation started
+2026-05-02 21:08:04 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 21:08:04 | INFO | [Validator Agent] Plan invalid: Budget exceeded by 33000.00. Total cost is 78000.00, budget is 45000.00.
+2026-05-02 21:08:04 | INFO | [System] Maximum recommendation attempts reached, ending workflow
+2026-05-02 21:08:04 | INFO | [System] Final output saved to outputs\itineraries\yala_final_plan.json
+2026-05-02 21:08:04 | INFO | [System] Workflow completed

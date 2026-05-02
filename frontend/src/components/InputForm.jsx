@@ -58,16 +58,37 @@ const InputForm = ({ onSubmit, isLoading }) => {
         </div>
       )}
       <form onSubmit={handleSubmit} className="space-y-5 flex-grow flex flex-col relative z-10">
-        <div className="group">
+        <div className="group relative">
           <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Destination</label>
-          <input
-            type="text"
-            className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"
-            placeholder="e.g., Ella, Sri Lanka"
+          <select
+            className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm outline-none appearance-none cursor-pointer"
             value={destination}
             onChange={(e) => setDestination(e.target.value)}
             disabled={isLoading}
-          />
+          >
+            <option value="" disabled>Select a destination</option>
+            <option value="Colombo">Colombo</option>
+            <option value="Kandy">Kandy</option>
+            <option value="Ella">Ella</option>
+            <option value="Nuwara Eliya">Nuwara Eliya</option>
+            <option value="Galle">Galle</option>
+            <option value="Mirissa">Mirissa</option>
+            <option value="Sigiriya">Sigiriya</option>
+            <option value="Yala">Yala</option>
+            <option value="Trincomalee">Trincomalee</option>
+            <option value="Anuradhapura">Anuradhapura</option>
+            <option value="Bentota">Bentota</option>
+            <option value="Arugam Bay">Arugam Bay</option>
+            <option value="Jaffna">Jaffna</option>
+            <option value="Polonnaruwa">Polonnaruwa</option>
+            <option value="Dambulla">Dambulla</option>
+            <option value="Hikkaduwa">Hikkaduwa</option>
+            <option value="Horton Plains">Horton Plains</option>
+            <option value="Udawalawe">Udawalawe</option>
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 pt-7 text-slate-500">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
         </div>
         <div className="grid grid-cols-3 gap-5">
           <div className="group">
