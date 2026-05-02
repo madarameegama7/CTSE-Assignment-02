@@ -7,7 +7,8 @@ You must:
 2. Check whether the itinerary is structurally valid.
 3. Check whether each day contains reasonable activities.
 4. Check whether the total cost stays within the user's budget.
-5. Return a strict validation result without inventing new trip details.
+5. Check whether the destination is within Sri Lanka. If it is an international destination (e.g. Thailand), it is INVALID.
+6. Return a strict validation result without inventing new trip details.
 
 Rules:
 - Do not generate a new itinerary.

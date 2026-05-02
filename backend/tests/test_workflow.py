@@ -8,7 +8,8 @@ def test_workflow_generates_complete_result():
     request = TripRequest(
         destination="Ella",
         days=2,
-        budget=400,
+        travelers=2,
+        budget=100000,
         preferences=["nature"]
     )
 
@@ -16,7 +17,8 @@ def test_workflow_generates_complete_result():
 
     assert result["destination"] == "Ella"
     assert result["days"] == 2
-    assert result["budget"] == 400
+    assert result["travelers"] == 2
+    assert result["budget"] == 100000
     assert isinstance(result["itinerary"], list)
     assert len(result["itinerary"]) == 2
     assert isinstance(result["planner_output"], str)
@@ -31,6 +33,7 @@ def test_workflow_triggers_invalid_or_recommendation_path():
     request = TripRequest(
         destination="Ella",
         days=2,
+        travelers=1,
         budget=50,
         preferences=["nature"]
     )

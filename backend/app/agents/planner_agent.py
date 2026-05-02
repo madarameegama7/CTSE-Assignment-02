@@ -73,6 +73,7 @@ def _select_activities(
 def _build_planner_user_message(
     destination: str,
     days: int,
+    travelers: int,
     preferences: List[str],
     destination_data: Dict[str, Any],
     itinerary: List[Dict[str, Any]]
@@ -93,6 +94,7 @@ def _build_planner_user_message(
     return (
         f"Destination: {destination}\n"
         f"Days: {days}\n"
+        f"Travelers: {travelers}\n"
         f"Preferences: {', '.join(preferences) if preferences else 'Not specified'}\n\n"
         f"Local destination summary:\n{summary}\n\n"
         f"Suggested stay areas: {', '.join(areas_to_stay) if areas_to_stay else 'N/A'}\n"
@@ -106,6 +108,7 @@ def _build_planner_user_message(
 def _fallback_planner_output(
     destination: str,
     days: int,
+    travelers: int,
     preferences: List[str],
     itinerary: List[Dict[str, Any]]
 ) -> str:
@@ -116,6 +119,7 @@ def _fallback_planner_output(
         "Initial Trip Draft",
         f"Destination: {destination}",
         f"Duration: {days} days",
+        f"Travelers: {travelers}",
         f"Preferences: {', '.join(preferences) if preferences else 'Not specified'}",
         "",
         "Draft Itinerary"
@@ -151,6 +155,7 @@ def planner_agent(state: TravelState) -> TravelState:
 
     destination = state.get("destination", "")
     days = state.get("days", 0)
+    travelers = state.get("travelers", 1)
     preferences = state.get("preferences", [])
 
     destination_data = read_destination_data(destination)
@@ -170,6 +175,7 @@ def planner_agent(state: TravelState) -> TravelState:
         user_message = _build_planner_user_message(
             destination=destination,
             days=days,
+            travelers=travelers,
             preferences=preferences,
             destination_data=destination_data,
             itinerary=itinerary
@@ -187,6 +193,7 @@ def planner_agent(state: TravelState) -> TravelState:
         planner_output = _fallback_planner_output(
             destination=destination,
             days=days,
+            travelers=travelers,
             preferences=preferences,
             itinerary=itinerary
         )

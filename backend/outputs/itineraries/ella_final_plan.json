@@ -1,9 +1,10 @@
 {
     "destination": "ella",
-    "days": 3,
-    "budget": 500.0,
+    "days": 2,
+    "travelers": 2,
+    "budget": 150000.0,
     "preferences": [
-        "food"
+        "relax"
     ],
     "itinerary": [
         {
@@ -19,22 +20,16 @@
                 "Ella Rock",
                 "Ravana Falls"
             ]
-        },
-        {
-            "day": 3,
-            "activities": [
-                "Free exploration"
-            ]
         }
     ],
-    "planner_output": "Initial Trip Draft\nDestination: ella\nDuration: 3 days\nPreferences: food\n\nDraft Itinerary\nDay 1:\n- Nine Arch Bridge\n- Little Adam's Peak\n\nDay 2:\n- Ella Rock\n- Ravana Falls\n\nDay 3:\n- Free exploration\n\nPlanning Notes:\n- Generated from local destination data.\n- Budget and validation will be handled by downstream agents.",
+    "planner_output": "Initial Trip Draft\nDestination: Ella, Sri Lanka\nDuration: 2 days\nTravelers: 2\nInterests: Relaxation, scenic views\n\nAssumptions:\n- The train ride to Nine Arch Bridge is included in the travel package.\n- Local transportation (tuk-tuks and walking) will be used for sightseeing within Ella Town and nearby areas.\n\nDraft Itinerary\nDay 1:\n- Morning: Arrive at Ella Train Station, board the scenic train ride to Nine Arch Bridge. Enjoy the views of the surrounding hills and valleys.\n- Afternoon: Visit Nine Arch Bridge, a popular spot for photography and relaxation. Explore the area around the bridge, including nearby trails and viewpoints.\n- Evening: Return to Ella Town or stay in the area near Nine Arch Bridge for dinner.\n\nDay 2:\n- Morning: Drive to Ella Rock, known for its stunning views of the surrounding landscape. Take time to relax at this scenic spot.\n- Afternoon: Visit Ravana Falls, a natural attraction with beautiful waterfalls and lush surroundings. Enjoy some leisure time here before returning to Ella Town or staying in the area near Nine Arch Bridge.\n- Evening: Relax and enjoy dinner in Ella Town.\n\nPlanning Notes for Budget Agent:\n- The train ride is included in the travel package, so no additional cost needs to be calculated for this part of the trip.\n- Local transportation (tuk-tuks and walking) will likely be used for sightseeing within Ella Town and nearby areas. Costs can be estimated based on local rates.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that all travel arrangements, including train tickets and local transport, are confirmed before departure.\n- Confirm the availability of parking at the train station and any other locations where visitors might need to park their vehicles.\n- Check if there are any restrictions or additional fees related to visiting specific attractions like Nine Arch Bridge.\n\nPlanning Notes for Recommendation Agent:\n- Suggest alternative activities within Ella Town such as visiting local markets, enjoying a spa treatment, or exploring nearby villages.\n- Recommend dining options that cater to the travelers' interests in relaxation and scenic views.",
     "cost_breakdown": {
-        "accommodation": 160.0,
-        "food": 75.0,
-        "transport": 60.0,
-        "activities": 70.0
+        "accommodation": 22000.0,
+        "food": 28000.0,
+        "transport": 8000.0,
+        "activities": 13000.0
     },
-    "total_cost": 365.0,
+    "total_cost": 71000.0,
     "validation_status": "VALID",
     "validation_errors": [],
     "recommended_changes": [],
