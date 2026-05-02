@@ -93,37 +93,23 @@ LOG_LEVEL=INFO
 
 ### Travel Planning
 ```bash
-POST /api/plan
+POST /plan-trip
 Content-Type: application/json
 
 {
-  "destination": "Paris",
-  "budget": 5000,
-  "duration_days": 7,
-  "interests": ["museums", "restaurants"]
+  "destination": "Ella",
+  "days": 3,
+  "travelers": 2,
+  "budget": 50000,
+  "preferences": ["nature", "hiking"]
 }
 ```
 
-### Validation
-```bash
-POST /api/validate
-Content-Type: application/json
-
-{
-  "itinerary": {...},
-  "constraints": {...}
-}
-```
-
-### Recommendations
-```bash
-POST /api/recommend
-Content-Type: application/json
-
-{
-  "plan": {...}
-}
-```
+The `/plan-trip` endpoint runs the entire LangGraph multi-agent workflow:
+1. Plans the itinerary
+2. Calculates the budget
+3. Validates constraints
+4. Generates recommendations
 
 ## 🧪 Testing Guide
 
