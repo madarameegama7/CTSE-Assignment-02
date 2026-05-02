@@ -137,7 +137,7 @@ CTSE-Assignment-02/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/madarameegama7/CTSE-Assignment-02
    cd CTSE-Assignment-02/backend
    ```
 
@@ -197,17 +197,12 @@ python scripts/seed_data.py
 
 ### Core Endpoints
 
-- **POST** `/api/plan` - Create a travel plan
-  - Input: Travel requirements and constraints
-  - Output: Generated itinerary with budget breakdown
+- **GET** `/health` - Check if the API is running
+  - Output: Health status
 
-- **POST** `/api/validate` - Validate an itinerary
-  - Input: Itinerary details
-  - Output: Validation results and constraints check
-
-- **POST** `/api/recommend` - Get recommendations
-  - Input: Current plan
-  - Output: Improvement suggestions
+- **POST** `/plan-trip` - Create a travel plan using the multi-agent workflow
+  - Input: Travel requirements (destination, days, travelers, budget, preferences)
+  - Output: Generated itinerary, budget breakdown, validation status, and recommendations
 
 ## 🧪 Testing
 
@@ -240,10 +235,10 @@ pytest --cov=app tests/
 
 | Member | Role | Components |
 |--------|------|------------|
-| **Ashika** | Planner Agent | `planner_agent.py`, `planner_prompt.txt`, `test_planner_agent.py` |
-| **Madara** | Budget Agent | `budget_agent.py`, `cost_calculator.py`, `budget_prompt.txt`, `test_budget_agent.py` |
-| **Janudi** | Validator Agent | `validator_agent.py`, `validate_constraints.py`, `validator_prompt.txt`, `test_validator_agent.py` |
-| **Induwara** | Recommendation Agent | `recommendation_agent.py`, `recommendation_prompt.txt`, `file_writer.py`, `test_recommendation_agent.py` |
+| **Ridimahaliyadda A.K** | Planner Agent | `planner_agent.py`, `planner_prompt.txt`, `test_planner_agent.py` |
+| **Meegama D.M** | Budget Agent | `budget_agent.py`, `cost_calculator.py`, `budget_prompt.txt`, `test_budget_agent.py` |
+| **Adhikari A.A.J.T** | Validator Agent | `validator_agent.py`, `validate_constraints.py`, `validator_prompt.txt`, `test_validator_agent.py` |
+| **Ranasinghe I.C** | Recommendation Agent | `recommendation_agent.py`, `recommendation_prompt.txt`, `file_writer.py`, `test_recommendation_agent.py` |
 
 ## 📝 Configuration
 
