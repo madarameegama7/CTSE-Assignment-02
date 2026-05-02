@@ -1,23 +1,23 @@
 {
     "destination": "ella",
-    "days": 3,
-    "budget": 500.0,
+    "days": 4,
+    "budget": 15000.0,
     "preferences": [
-        "food"
+        "nature"
     ],
     "itinerary": [
         {
             "day": 1,
             "activities": [
                 "Nine Arch Bridge",
-                "Little Adam's Peak"
+                "Ravana Falls"
             ]
         },
         {
             "day": 2,
             "activities": [
-                "Ella Rock",
-                "Ravana Falls"
+                "Little Adam's Peak",
+                "Ella Rock"
             ]
         },
         {
@@ -25,16 +25,22 @@
             "activities": [
                 "Free exploration"
             ]
+        },
+        {
+            "day": 4,
+            "activities": [
+                "Free exploration"
+            ]
         }
     ],
-    "planner_output": "Initial Trip Draft\nDestination: ella\nDuration: 3 days\nPreferences: food\n\nDraft Itinerary\nDay 1:\n- Nine Arch Bridge\n- Little Adam's Peak\n\nDay 2:\n- Ella Rock\n- Ravana Falls\n\nDay 3:\n- Free exploration\n\nPlanning Notes:\n- Generated from local destination data.\n- Budget and validation will be handled by downstream agents.",
+    "planner_output": "Initial Trip Draft\nDestination: Ella, Thailand (Hill Country)\nDuration: 4 days\nTravelers: 2 adults\nInterests: Nature\n\nAssumptions:\n- The train ride to Nine Arch Bridge is included in the travel package.\n- Local transportation such as tuk-tuks and walking are common for exploring the area.\n\nDraft Itinerary\nDay 1:\n- Morning: Arrive at Ella Town, check into a hotel near Nine Arch Bridge. Enjoy a scenic train journey from Ella Town to Nine Arch Bridge.\n- Afternoon: Visit Nine Arch Bridge and Ravana Falls. Take in the natural beauty of the area.\n- Evening: Relax at your accommodation or explore nearby local eateries.\n\nDay 2:\n- Morning: Drive to Little Adam's Peak, a popular hiking spot with stunning views.\n- Afternoon: Hike up to Little Adam\u2019s Peak for panoramic views of Ella and surrounding areas. The hike can be challenging but rewarding.\n- Evening: Return to Ella Town or stay at your accommodation in the area.\n\nDay 3:\n- Morning: Free time to explore Ella Town, Passara Road area, or nearby hiking trails like Nine Arch Bridge.\n- Afternoon: More free exploration of Ella and its surroundings. Consider visiting the Nine Arch Bridge again for a different perspective.\n- Evening: Enjoy dinner at a local restaurant in Ella.\n\nDay 4:\n- Morning: Free time to explore more of Ella Town or continue exploring the area.\n- Afternoon: Final day of free exploration, possibly including a visit to Passara Road and its shops.\n- Evening: Depart from Ella Town after breakfast.\n\nPlanning Notes for Budget Agent:\n- The train ride is included in the travel package. Other transportation costs will be covered by local tuk-tuks or walking as needed.\n- Accommodation can be booked locally, but may not include meals which should be budgeted separately.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that the hiking conditions are suitable for two adults with varying fitness levels.\n- Confirm if there are any entrance fees to specific attractions like Little Adam's Peak or Ravana Falls.\n- Check local weather forecasts as they can impact outdoor activities, especially during Day 2 when visiting Little Adam\u2019s Peak.\n\nPlanning Notes for Recommendation Agent:\n- Suggest dining options that align with the nature theme and budget constraints.\n- Recommend accommodation based on availability and cost-effectiveness.\n- Offer suggestions for additional activities such as a visit to Nine Arch Bridge or a local cooking class.",
     "cost_breakdown": {
-        "accommodation": 160.0,
-        "food": 75.0,
+        "accommodation": 240.0,
+        "food": 100.0,
         "transport": 60.0,
         "activities": 70.0
     },
-    "total_cost": 365.0,
+    "total_cost": 470.0,
     "validation_status": "VALID",
     "validation_errors": [],
     "recommended_changes": [],
