@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const InputForm = ({ onSubmit, isLoading }) => {
   const [destination, setDestination] = useState('');
   const [days, setDays] = useState('');
+  const [travelers, setTravelers] = useState('1');
   const [budget, setBudget] = useState('');
   const [preferences, setPreferences] = useState('');
   const [error, setError] = useState('');
@@ -19,6 +20,10 @@ const InputForm = ({ onSubmit, isLoading }) => {
       setError('Days must be greater than 0.');
       return;
     }
+    if (!travelers || Number(travelers) <= 0) {
+      setError('Travelers must be greater than 0.');
+      return;
+    }
     if (!budget || Number(budget) <= 0) {
       setError('Budget must be greater than 0.');
       return;
@@ -32,6 +37,7 @@ const InputForm = ({ onSubmit, isLoading }) => {
     onSubmit({
       destination: destination.trim(),
       days: Number(days),
+      travelers: Number(travelers),
       budget: Number(budget),
       preferences: prefsArray,
     });
@@ -63,7 +69,7 @@ const InputForm = ({ onSubmit, isLoading }) => {
             disabled={isLoading}
           />
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-3 gap-5">
           <div className="group">
             <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Days</label>
             <input
@@ -72,6 +78,17 @@ const InputForm = ({ onSubmit, isLoading }) => {
               placeholder="e.g., 3"
               value={days}
               onChange={(e) => setDays(e.target.value)}
+              disabled={isLoading}
+            />
+          </div>
+          <div className="group">
+            <label className="block text-sm font-semibold text-slate-700 mb-1.5 transition-colors group-focus-within:text-indigo-600">Travelers</label>
+            <input
+              type="number"
+              className="w-full px-4 py-3 bg-white/60 border border-slate-200 rounded-xl focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 transition-all shadow-sm placeholder:text-slate-400 outline-none"
+              placeholder="e.g., 2"
+              value={travelers}
+              onChange={(e) => setTravelers(e.target.value)}
               disabled={isLoading}
             />
           </div>

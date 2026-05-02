@@ -15,6 +15,7 @@ def _build_initial_state(request: TripRequest) -> TravelState:
     return {
         "destination": request.destination,
         "days": request.days,
+        "travelers": request.travelers,
         "budget": request.budget,
         "preferences": request.preferences,
         "itinerary": [],
@@ -85,6 +86,7 @@ def _save_final_output(state: TravelState) -> TravelState:
     final_output = {
         "destination": state.get("destination"),
         "days": state.get("days"),
+        "travelers": state.get("travelers"),
         "budget": state.get("budget"),
         "preferences": state.get("preferences"),
         "itinerary": state.get("itinerary"),

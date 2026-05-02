@@ -8,6 +8,7 @@ def _base_state() -> dict:
     return {
         "destination": "Ella",
         "days": 2,
+        "travelers": 1,
         "budget": 400.0,
         "preferences": ["nature"],
         "itinerary": [
@@ -28,6 +29,7 @@ def test_calculate_trip_cost_returns_breakdown_and_total():
     result = calculate_trip_cost(
         destination="Ella",
         days=2,
+        travelers=1,
         itinerary=[
             {"day": 1, "activities": ["Nine Arch Bridge", "Ella Rock"]},
             {"day": 2, "activities": ["Little Adam's Peak", "Ravana Falls"]},
@@ -71,5 +73,6 @@ def test_calculate_trip_cost_rejects_unsafe_itinerary_shape():
         calculate_trip_cost(
             destination="Ella",
             days=2,
+            travelers=1,
             itinerary=[{"day": 1, "activities": "Nine Arch Bridge"}],
         )
