@@ -8,9 +8,9 @@
     "food_notes": ["Try Sri Lankan rice and curry", "Seafood restaurants are popular", "Street food is available near Galle Face"],
     "activities": [
       { "name": "Galle Face Green", "type": "relax", "cost": 0 },
-      { "name": "Gangaramaya Temple", "type": "culture", "cost": 10 },
+      { "name": "Gangaramaya Temple", "type": "culture", "cost": 2000 },
       { "name": "Independence Square", "type": "history", "cost": 0 },
-      { "name": "Colombo National Museum", "type": "culture", "cost": 12 }
+      { "name": "Colombo National Museum", "type": "culture", "cost": 3000 }
     ]
   },
   "kandy": {
@@ -21,10 +21,10 @@
     "must_see_places": ["Temple of the Tooth", "Kandy Lake", "Royal Botanical Gardens", "Bahirawakanda Temple"],
     "food_notes": ["Try traditional rice and curry", "Local sweets are common", "Buffet-style restaurants are easy to find"],
     "activities": [
-      { "name": "Temple of the Tooth", "type": "culture", "cost": 12 },
+      { "name": "Temple of the Tooth", "type": "culture", "cost": 2500 },
       { "name": "Kandy Lake", "type": "relax", "cost": 0 },
-      { "name": "Royal Botanical Gardens", "type": "nature", "cost": 8 },
-      { "name": "Bahirawakanda Temple", "type": "culture", "cost": 5 }
+      { "name": "Royal Botanical Gardens", "type": "nature", "cost": 3000 },
+      { "name": "Bahirawakanda Temple", "type": "culture", "cost": 1000 }
     ]
   },
   "ella": {
@@ -35,10 +35,10 @@
     "must_see_places": ["Nine Arch Bridge", "Little Adam's Peak", "Ella Rock", "Ravana Falls"],
     "food_notes": ["Cafes with scenic views are popular", "Local rice and curry is easy to find", "Many guesthouses offer homemade meals"],
     "activities": [
-      { "name": "Nine Arch Bridge", "type": "nature", "cost": 20 },
-      { "name": "Little Adam's Peak", "type": "hiking", "cost": 15 },
-      { "name": "Ella Rock", "type": "hiking", "cost": 25 },
-      { "name": "Ravana Falls", "type": "nature", "cost": 10 }
+      { "name": "Nine Arch Bridge", "type": "nature", "cost": 1500 },
+      { "name": "Little Adam's Peak", "type": "hiking", "cost": 1500 },
+      { "name": "Ella Rock", "type": "hiking", "cost": 2500 },
+      { "name": "Ravana Falls", "type": "nature", "cost": 1000 }
     ]
   },
   "nuwara_eliya": {
@@ -49,10 +49,10 @@
     "must_see_places": ["Gregory Lake", "Hakgala Botanical Garden", "Tea Plantations", "Victoria Park"],
     "food_notes": ["Hot meals and tea are popular", "Try local vegetable dishes", "Many hotels serve buffet meals"],
     "activities": [
-      { "name": "Gregory Lake", "type": "relax", "cost": 5 },
-      { "name": "Hakgala Botanical Garden", "type": "nature", "cost": 10 },
-      { "name": "Tea Plantations", "type": "relax", "cost": 8 },
-      { "name": "Victoria Park", "type": "nature", "cost": 6 }
+      { "name": "Gregory Lake", "type": "relax", "cost": 1000 },
+      { "name": "Hakgala Botanical Garden", "type": "nature", "cost": 3000 },
+      { "name": "Tea Plantations", "type": "relax", "cost": 1500 },
+      { "name": "Victoria Park", "type": "nature", "cost": 1000 }
     ]
   },
   "galle": {
@@ -65,8 +65,8 @@
     "activities": [
       { "name": "Galle Fort", "type": "history", "cost": 0 },
       { "name": "Galle Lighthouse", "type": "relax", "cost": 0 },
-      { "name": "Dutch Reformed Church", "type": "culture", "cost": 5 },
-      { "name": "Maritime Museum", "type": "culture", "cost": 7 }
+      { "name": "Dutch Reformed Church", "type": "culture", "cost": 1000 },
+      { "name": "Maritime Museum", "type": "culture", "cost": 2000 }
     ]
   },
   "mirissa": {
@@ -79,8 +79,8 @@
     "activities": [
       { "name": "Mirissa Beach", "type": "relax", "cost": 0 },
       { "name": "Coconut Tree Hill", "type": "nature", "cost": 0 },
-      { "name": "Whale Watching", "type": "adventure", "cost": 35 },
-      { "name": "Secret Beach", "type": "relax", "cost": 5 }
+      { "name": "Whale Watching", "type": "adventure", "cost": 20000 },
+      { "name": "Secret Beach", "type": "relax", "cost": 1000 }
     ]
   },
   "sigiriya": {
@@ -91,10 +91,10 @@
     "must_see_places": ["Sigiriya Rock Fortress", "Pidurangala Rock", "Dambulla Cave Temple", "Village Tour"],
     "food_notes": ["Village-style meals are common", "Rice and curry is widely available", "Some hotels offer traditional dinners"],
     "activities": [
-      { "name": "Sigiriya Rock Fortress", "type": "history", "cost": 30 },
-      { "name": "Pidurangala Rock", "type": "hiking", "cost": 10 },
-      { "name": "Dambulla Cave Temple", "type": "culture", "cost": 8 },
-      { "name": "Village Tour", "type": "culture", "cost": 15 }
+      { "name": "Sigiriya Rock Fortress", "type": "history", "cost": 12000 },
+      { "name": "Pidurangala Rock", "type": "hiking", "cost": 2500 },
+      { "name": "Dambulla Cave Temple", "type": "culture", "cost": 3000 },
+      { "name": "Village Tour", "type": "culture", "cost": 5000 }
     ]
   },
   "yala": {
@@ -105,9 +105,9 @@
     "must_see_places": ["Yala National Park", "Safari experience", "Nearby lakes and bird areas"],
     "food_notes": ["Hotel dining is common", "Simple Sri Lankan meals are available", "Carry snacks for long outings"],
     "activities": [
-      { "name": "Yala National Park", "type": "wildlife", "cost": 25 },
-      { "name": "Safari experience", "type": "adventure", "cost": 40 },
-      { "name": "Nearby lakes and bird areas", "type": "nature", "cost": 10 }
+      { "name": "Yala National Park", "type": "wildlife", "cost": 15000 },
+      { "name": "Safari experience", "type": "adventure", "cost": 25000 },
+      { "name": "Nearby lakes and bird areas", "type": "nature", "cost": 2000 }
     ]
   }
 }
