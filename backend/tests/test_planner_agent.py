@@ -124,6 +124,7 @@ def test_build_planner_user_message_contains_required_fields() -> None:
     message = planner_agent._build_planner_user_message(
         destination="Ella",
         days=2,
+        travelers=1,
         preferences=["nature", "hiking"],
         destination_data=destination_data,
         itinerary=itinerary,

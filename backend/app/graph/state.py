@@ -4,6 +4,7 @@ from typing import TypedDict, List, Dict, Any, Optional
 class TravelState(TypedDict, total=False):
     destination: str
     days: int
+    travelers: int
     budget: float
     preferences: List[str]
 

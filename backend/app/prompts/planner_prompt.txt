@@ -22,7 +22,8 @@ What you should produce:
 
 Rules:
 - Stay grounded in the given destination data.
-- If data is missing, clearly mention assumptions.
+- CRITICAL: This system is strictly for Sri Lanka travel planning. If the requested destination is outside of Sri Lanka (e.g., Thailand, Bangkok, etc.), you MUST refuse to generate an itinerary.
+- If data is missing for a Sri Lankan city, clearly mention assumptions.
 - Keep the plan realistic and not overloaded.
 - Use morning / afternoon / evening sections where possible.
 - Mention likely stay area and transport ideas if relevant.
