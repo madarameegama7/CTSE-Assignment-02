@@ -131,3 +131,36 @@
 2026-05-02 20:27:31 | INFO | [System] Validation passed, ending workflow
 2026-05-02 20:27:31 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
 2026-05-02 20:27:31 | INFO | [System] Workflow completed
+2026-05-02 20:39:55 | INFO | [System] Workflow started
+2026-05-02 20:39:55 | INFO | [Planner Agent] Planner started
+2026-05-02 20:40:03 | INFO | [Planner Agent] Planner summary generated using Ollama
+2026-05-02 20:40:03 | INFO | [Planner Agent] Planner created itinerary for 2 day(s)
+2026-05-02 20:40:03 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 20:40:03 | INFO | [BudgetAgent] Total trip cost calculated: 71000.0
+2026-05-02 20:40:03 | INFO | [Validator Agent] Validation started
+2026-05-02 20:40:03 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 20:40:03 | INFO | [Validator Agent] Plan invalid: Budget exceeded by 21000.00. Total cost is 71000.00, budget is 50000.00.
+2026-05-02 20:40:03 | INFO | [System] Routing to Recommendation Agent
+2026-05-02 20:40:03 | INFO | [Recommendation Agent] Recommendation step started
+2026-05-02 20:40:03 | INFO | [Recommendation Agent] Recommendation contract loaded from recommendation_prompt.txt in deterministic mode
+2026-05-02 20:40:03 | INFO | [Recommendation Agent] Recommendation complete. Updated itinerary sent to Budget Agent for recalculation
+2026-05-02 20:40:03 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 20:40:03 | INFO | [BudgetAgent] Total trip cost calculated: 66000.0
+2026-05-02 20:40:03 | INFO | [Validator Agent] Validation started
+2026-05-02 20:40:03 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 20:40:03 | INFO | [Validator Agent] Plan invalid: Budget exceeded by 16000.00. Total cost is 66000.00, budget is 50000.00.
+2026-05-02 20:40:03 | INFO | [System] Maximum recommendation attempts reached, ending workflow
+2026-05-02 20:40:03 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
+2026-05-02 20:40:03 | INFO | [System] Workflow completed
+2026-05-02 20:40:23 | INFO | [System] Workflow started
+2026-05-02 20:40:23 | INFO | [Planner Agent] Planner started
+2026-05-02 20:40:31 | INFO | [Planner Agent] Planner summary generated using Ollama
+2026-05-02 20:40:31 | INFO | [Planner Agent] Planner created itinerary for 2 day(s)
+2026-05-02 20:40:31 | INFO | [BudgetAgent] Starting trip cost calculation
+2026-05-02 20:40:31 | INFO | [BudgetAgent] Total trip cost calculated: 71000.0
+2026-05-02 20:40:31 | INFO | [Validator Agent] Validation started
+2026-05-02 20:40:31 | INFO | [Validator Agent] Validator contract loaded from validator_prompt.txt in deterministic mode
+2026-05-02 20:40:31 | INFO | [Validator Agent] Plan validated successfully
+2026-05-02 20:40:31 | INFO | [System] Validation passed, ending workflow
+2026-05-02 20:40:31 | INFO | [System] Final output saved to outputs\itineraries\ella_final_plan.json
+2026-05-02 20:40:31 | INFO | [System] Workflow completed
