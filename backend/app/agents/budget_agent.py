@@ -25,6 +25,7 @@ def run_budget_agent(state: TravelState) -> TravelState:
             destination=str(updated_state["destination"]),
             days=int(updated_state["days"]),
             itinerary=_safe_itinerary(updated_state.get("itinerary", [])),
+            travelers=int(updated_state.get("travelers", 1)),
         )
     except (KeyError, TypeError, ValueError) as exc:
         logs.append(log_event(AGENT_NAME, f"Cost calculation failed: {exc}"))
