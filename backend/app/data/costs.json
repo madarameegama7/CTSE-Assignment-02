@@ -1,17 +1,92 @@
 {
-  "Ella": {
-    "hotel_per_night": 80,
-    "food_per_day": 25,
-    "transport_base": 60
+  "colombo": {
+    "hotel_per_night": 25000,
+    "food_per_day": 8000,
+    "transport_base": 5000
   },
-  "Kandy": {
-    "hotel_per_night": 70,
-    "food_per_day": 22,
-    "transport_base": 50
+  "kandy": {
+    "hotel_per_night": 20000,
+    "food_per_day": 6000,
+    "transport_base": 4000
   },
-  "Galle": {
-    "hotel_per_night": 90,
-    "food_per_day": 28,
-    "transport_base": 65
+  "ella": {
+    "hotel_per_night": 22000,
+    "food_per_day": 7000,
+    "transport_base": 4000
+  },
+  "nuwara_eliya": {
+    "hotel_per_night": 25000,
+    "food_per_day": 7000,
+    "transport_base": 5000
+  },
+  "galle": {
+    "hotel_per_night": 28000,
+    "food_per_day": 9000,
+    "transport_base": 5000
+  },
+  "mirissa": {
+    "hotel_per_night": 26000,
+    "food_per_day": 8000,
+    "transport_base": 4000
+  },
+  "sigiriya": {
+    "hotel_per_night": 22000,
+    "food_per_day": 6000,
+    "transport_base": 5000
+  },
+  "yala": {
+    "hotel_per_night": 30000,
+    "food_per_day": 8000,
+    "transport_base": 15000
+  },
+  "trincomalee": {
+    "hotel_per_night": 22000,
+    "food_per_day": 7000,
+    "transport_base": 4000
+  },
+  "anuradhapura": {
+    "hotel_per_night": 18000,
+    "food_per_day": 6000,
+    "transport_base": 3000
+  },
+  "bentota": {
+    "hotel_per_night": 28000,
+    "food_per_day": 9000,
+    "transport_base": 5000
+  },
+  "arugam_bay": {
+    "hotel_per_night": 20000,
+    "food_per_day": 7500,
+    "transport_base": 4000
+  },
+  "jaffna": {
+    "hotel_per_night": 15000,
+    "food_per_day": 5000,
+    "transport_base": 3000
+  },
+  "polonnaruwa": {
+    "hotel_per_night": 18000,
+    "food_per_day": 5500,
+    "transport_base": 3500
+  },
+  "dambulla": {
+    "hotel_per_night": 16000,
+    "food_per_day": 6000,
+    "transport_base": 3000
+  },
+  "hikkaduwa": {
+    "hotel_per_night": 18000,
+    "food_per_day": 7000,
+    "transport_base": 3500
+  },
+  "horton_plains": {
+    "hotel_per_night": 22000,
+    "food_per_day": 8000,
+    "transport_base": 6000
+  },
+  "udawalawe": {
+    "hotel_per_night": 17000,
+    "food_per_day": 6500,
+    "transport_base": 12000
   }
 }

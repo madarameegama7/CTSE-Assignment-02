@@ -1,7 +1,7 @@
 {
     "destination": "Ella",
-    "days": 3,
-    "budget": 500.0,
+    "days": 2,
+    "budget": 50.0,
     "preferences": [
         "nature"
     ],
@@ -9,29 +9,28 @@
         {
             "day": 1,
             "activities": [
-                "A"
+                "Nine Arch Bridge"
             ]
         },
         {
             "day": 2,
             "activities": [
-                "B"
-            ]
-        },
-        {
-            "day": 3,
-            "activities": [
-                "Free exploration"
+                "Little Adam's Peak"
             ]
         }
     ],
-    "cost_breakdown": {},
-    "total_cost": 150.0,
+    "cost_breakdown": {
+        "accommodation": 80.0,
+        "food": 50.0,
+        "transport": 60.0,
+        "activities": 70.0
+    },
+    "total_cost": 260.0,
     "validation_status": "RECOMMENDED",
     "validation_errors": [
-        "Itinerary day count mismatch. Expected 3, got 2."
+        "Budget exceeded by 210.00. Total cost is 260.00, budget is 50.00."
     ],
     "recommended_changes": [
-        "Adjusted itinerary to match requested number of days."
+        "Reduced number of paid activities to lower the total cost."
     ]
 }

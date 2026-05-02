@@ -5,7 +5,13 @@
     "areas_to_stay": ["Colombo 03", "Colombo 07", "Fort"],
     "transport_tips": ["Use PickMe or Uber", "Avoid rush hour traffic", "Tuk-tuks are common for short trips"],
     "must_see_places": ["Galle Face Green", "Gangaramaya Temple", "Independence Square", "Colombo National Museum"],
-    "food_notes": ["Try Sri Lankan rice and curry", "Seafood restaurants are popular", "Street food is available near Galle Face"]
+    "food_notes": ["Try Sri Lankan rice and curry", "Seafood restaurants are popular", "Street food is available near Galle Face"],
+    "activities": [
+      { "name": "Galle Face Green", "type": "relax", "cost": 0 },
+      { "name": "Gangaramaya Temple", "type": "culture", "cost": 2000 },
+      { "name": "Independence Square", "type": "history", "cost": 0 },
+      { "name": "Colombo National Museum", "type": "culture", "cost": 3000 }
+    ]
   },
   "kandy": {
     "destination": "Kandy",
@@ -13,7 +19,13 @@
     "areas_to_stay": ["Kandy City Center", "Lake Round", "Peradeniya"],
     "transport_tips": ["Walking is possible in the city center", "Use tuk-tuks for uphill areas", "Traffic can be busy in town"],
     "must_see_places": ["Temple of the Tooth", "Kandy Lake", "Royal Botanical Gardens", "Bahirawakanda Temple"],
-    "food_notes": ["Try traditional rice and curry", "Local sweets are common", "Buffet-style restaurants are easy to find"]
+    "food_notes": ["Try traditional rice and curry", "Local sweets are common", "Buffet-style restaurants are easy to find"],
+    "activities": [
+      { "name": "Temple of the Tooth", "type": "culture", "cost": 2500 },
+      { "name": "Kandy Lake", "type": "relax", "cost": 0 },
+      { "name": "Royal Botanical Gardens", "type": "nature", "cost": 3000 },
+      { "name": "Bahirawakanda Temple", "type": "culture", "cost": 1000 }
+    ]
   },
   "ella": {
     "destination": "Ella",
@@ -21,7 +33,13 @@
     "areas_to_stay": ["Ella Town", "Near Nine Arch Bridge", "Passara Road area"],
     "transport_tips": ["Walking and tuk-tuks are common", "The train ride is scenic", "Roads can be narrow and steep"],
     "must_see_places": ["Nine Arch Bridge", "Little Adam's Peak", "Ella Rock", "Ravana Falls"],
-    "food_notes": ["Cafes with scenic views are popular", "Local rice and curry is easy to find", "Many guesthouses offer homemade meals"]
+    "food_notes": ["Cafes with scenic views are popular", "Local rice and curry is easy to find", "Many guesthouses offer homemade meals"],
+    "activities": [
+      { "name": "Nine Arch Bridge", "type": "nature", "cost": 1500 },
+      { "name": "Little Adam's Peak", "type": "hiking", "cost": 1500 },
+      { "name": "Ella Rock", "type": "hiking", "cost": 2500 },
+      { "name": "Ravana Falls", "type": "nature", "cost": 1000 }
+    ]
   },
   "nuwara_eliya": {
     "destination": "Nuwara Eliya",
@@ -29,7 +47,13 @@
     "areas_to_stay": ["Town Center", "Lake Gregory area", "Blackpool area"],
     "transport_tips": ["Use a car or tuk-tuk", "Distances can be longer than expected", "Weather can affect travel comfort"],
     "must_see_places": ["Gregory Lake", "Hakgala Botanical Garden", "Tea Plantations", "Victoria Park"],
-    "food_notes": ["Hot meals and tea are popular", "Try local vegetable dishes", "Many hotels serve buffet meals"]
+    "food_notes": ["Hot meals and tea are popular", "Try local vegetable dishes", "Many hotels serve buffet meals"],
+    "activities": [
+      { "name": "Gregory Lake", "type": "relax", "cost": 1000 },
+      { "name": "Hakgala Botanical Garden", "type": "nature", "cost": 3000 },
+      { "name": "Tea Plantations", "type": "relax", "cost": 1500 },
+      { "name": "Victoria Park", "type": "nature", "cost": 1000 }
+    ]
   },
   "galle": {
     "destination": "Galle",
@@ -37,7 +61,13 @@
     "areas_to_stay": ["Galle Fort", "Unawatuna nearby", "City Center"],
     "transport_tips": ["Walk inside the fort", "Use tuk-tuks for short distances", "The coastal road can be busy"],
     "must_see_places": ["Galle Fort", "Galle Lighthouse", "Dutch Reformed Church", "Maritime Museum"],
-    "food_notes": ["Seafood is popular", "Cafe culture is strong in the fort area", "Sri Lankan and fusion food are common"]
+    "food_notes": ["Seafood is popular", "Cafe culture is strong in the fort area", "Sri Lankan and fusion food are common"],
+    "activities": [
+      { "name": "Galle Fort", "type": "history", "cost": 0 },
+      { "name": "Galle Lighthouse", "type": "relax", "cost": 0 },
+      { "name": "Dutch Reformed Church", "type": "culture", "cost": 1000 },
+      { "name": "Maritime Museum", "type": "culture", "cost": 2000 }
+    ]
   },
   "mirissa": {
     "destination": "Mirissa",
@@ -45,7 +75,13 @@
     "areas_to_stay": ["Mirissa Beach area", "Weligama nearby"],
     "transport_tips": ["Walking and tuk-tuks work well", "Beachside travel is simple", "Use early departures for whale watching"],
     "must_see_places": ["Mirissa Beach", "Coconut Tree Hill", "Whale Watching", "Secret Beach"],
-    "food_notes": ["Seafood BBQ is common", "Beach cafes are popular", "Fresh juices are widely available"]
+    "food_notes": ["Seafood BBQ is common", "Beach cafes are popular", "Fresh juices are widely available"],
+    "activities": [
+      { "name": "Mirissa Beach", "type": "relax", "cost": 0 },
+      { "name": "Coconut Tree Hill", "type": "nature", "cost": 0 },
+      { "name": "Whale Watching", "type": "adventure", "cost": 20000 },
+      { "name": "Secret Beach", "type": "relax", "cost": 1000 }
+    ]
   },
   "sigiriya": {
     "destination": "Sigiriya",
@@ -53,7 +89,13 @@
     "areas_to_stay": ["Sigiriya Town", "Dambulla nearby", "Habarana nearby"],
     "transport_tips": ["Use a tuk-tuk or private vehicle", "Start climbing early to avoid heat", "Some attractions are spread out"],
     "must_see_places": ["Sigiriya Rock Fortress", "Pidurangala Rock", "Dambulla Cave Temple", "Village Tour"],
-    "food_notes": ["Village-style meals are common", "Rice and curry is widely available", "Some hotels offer traditional dinners"]
+    "food_notes": ["Village-style meals are common", "Rice and curry is widely available", "Some hotels offer traditional dinners"],
+    "activities": [
+      { "name": "Sigiriya Rock Fortress", "type": "history", "cost": 12000 },
+      { "name": "Pidurangala Rock", "type": "hiking", "cost": 2500 },
+      { "name": "Dambulla Cave Temple", "type": "culture", "cost": 3000 },
+      { "name": "Village Tour", "type": "culture", "cost": 5000 }
+    ]
   },
   "yala": {
     "destination": "Yala",
@@ -61,6 +103,151 @@
     "areas_to_stay": ["Yala Gate area", "Tissamaharama"],
     "transport_tips": ["Safari jeeps are required inside the park", "Book safaris early", "Long road journeys are common"],
     "must_see_places": ["Yala National Park", "Safari experience", "Nearby lakes and bird areas"],
-    "food_notes": ["Hotel dining is common", "Simple Sri Lankan meals are available", "Carry snacks for long outings"]
+    "food_notes": ["Hotel dining is common", "Simple Sri Lankan meals are available", "Carry snacks for long outings"],
+    "activities": [
+      { "name": "Yala National Park", "type": "wildlife", "cost": 15000 },
+      { "name": "Safari experience", "type": "adventure", "cost": 25000 },
+      { "name": "Nearby lakes and bird areas", "type": "nature", "cost": 2000 }
+    ]
+  },
+  "trincomalee": {
+    "destination": "Trincomalee",
+    "summary": "Trincomalee is a coastal city in the east known for its beautiful beaches, natural harbor, and historical temples.",
+    "areas_to_stay": ["Uppuveli", "Nilaveli", "Trincomalee Town"],
+    "transport_tips": ["Tuk-tuks are ideal for short trips", "Rent a scooter to explore beaches", "Boat rides for Pigeon Island"],
+    "must_see_places": ["Pigeon Island", "Koneswaram Temple", "Nilaveli Beach", "Fort Frederick"],
+    "food_notes": ["Excellent seafood", "Spicy eastern style curries", "Beachside cafes are common"],
+    "activities": [
+      { "name": "Pigeon Island Snorkeling", "type": "adventure", "cost": 8000 },
+      { "name": "Koneswaram Temple", "type": "culture", "cost": 0 },
+      { "name": "Nilaveli Beach", "type": "relax", "cost": 0 },
+      { "name": "Fort Frederick", "type": "history", "cost": 0 }
+    ]
+  },
+  "anuradhapura": {
+    "destination": "Anuradhapura",
+    "summary": "Anuradhapura is the ancient capital of Sri Lanka, known for its well-preserved ruins and sacred Buddhist sites.",
+    "areas_to_stay": ["Anuradhapura New Town", "Near the Sacred City"],
+    "transport_tips": ["Rent a bicycle to explore ruins", "Tuk-tuks are available for a full day tour", "Wear comfortable walking shoes"],
+    "must_see_places": ["Sri Maha Bodhi", "Ruwanwelisaya", "Jetavanaramaya", "Abhayagiri Vihāra"],
+    "food_notes": ["Traditional Sri Lankan food", "Many vegetarian options", "Simple local eateries"],
+    "activities": [
+      { "name": "Sacred City Tour", "type": "history", "cost": 7500 },
+      { "name": "Sri Maha Bodhi", "type": "culture", "cost": 0 },
+      { "name": "Ruwanwelisaya", "type": "culture", "cost": 0 },
+      { "name": "Mihintale Hike", "type": "hiking", "cost": 1000 }
+    ]
+  },
+  "bentota": {
+    "destination": "Bentota",
+    "summary": "Bentota is a resort town on the southwest coast, famous for its water sports, golden beaches, and the Madu River.",
+    "areas_to_stay": ["Bentota Beach area", "Induruwa", "Aluthgama"],
+    "transport_tips": ["Tuk-tuks for local travel", "Boat rides for river safaris", "Walking along the beach"],
+    "must_see_places": ["Bentota Beach", "Brief Garden", "Turtle Hatchery", "Madu River"],
+    "food_notes": ["Resort dining is popular", "Fresh seafood by the beach", "International cuisine available"],
+    "activities": [
+      { "name": "Water Sports", "type": "adventure", "cost": 5000 },
+      { "name": "Madu River Safari", "type": "nature", "cost": 4000 },
+      { "name": "Turtle Hatchery", "type": "nature", "cost": 1500 },
+      { "name": "Brief Garden", "type": "nature", "cost": 2000 }
+    ]
+  },
+  "arugam_bay": {
+    "destination": "Arugam Bay",
+    "summary": "Arugam Bay is a world-renowned surfing destination with a laid-back vibe, vibrant nightlife, and nearby wildlife.",
+    "areas_to_stay": ["Arugam Bay Main Road", "Pottuvil", "Whiskey Point"],
+    "transport_tips": ["Rent a scooter with surfboard racks", "Tuk-tuks to surf breaks", "Walking distance within main town"],
+    "must_see_places": ["Main Point", "Elephant Rock", "Kumana National Park", "Muhudu Maha Viharaya"],
+    "food_notes": ["Great cafes and healthy food", "Smoothie bowls are popular", "Beachside BBQ and seafood"],
+    "activities": [
+      { "name": "Surfing Lesson", "type": "adventure", "cost": 6000 },
+      { "name": "Kumana Safari", "type": "wildlife", "cost": 15000 },
+      { "name": "Elephant Rock Sunset", "type": "relax", "cost": 0 },
+      { "name": "Lagoon Safari", "type": "nature", "cost": 4000 }
+    ]
+  },
+  "jaffna": {
+    "destination": "Jaffna",
+    "summary": "Jaffna is the cultural capital of northern Sri Lanka, known for its distinct Tamil heritage, ancient temples, and unique cuisine.",
+    "areas_to_stay": ["Jaffna Town", "Nallur", "Kayts"],
+    "transport_tips": ["Rent a scooter to explore the islands", "Tuk-tuks are common", "Buses connect to the mainland"],
+    "must_see_places": ["Nallur Kandaswamy Kovil", "Jaffna Fort", "Casuarina Beach", "Delft Island"],
+    "food_notes": ["Try Jaffna crab curry", "Unique spicy dishes", "Rio Ice Cream is a must-visit"],
+    "activities": [
+      { "name": "Nallur Temple Visit", "type": "culture", "cost": 0 },
+      { "name": "Jaffna Fort", "type": "history", "cost": 0 },
+      { "name": "Delft Island Ferry & Tour", "type": "adventure", "cost": 3000 },
+      { "name": "Casuarina Beach", "type": "relax", "cost": 500 }
+    ]
+  },
+  "polonnaruwa": {
+    "destination": "Polonnaruwa",
+    "summary": "Polonnaruwa is an ancient capital of Sri Lanka, offering a compact and well-preserved archaeological park.",
+    "areas_to_stay": ["Polonnaruwa New Town", "Near the Parakrama Samudra"],
+    "transport_tips": ["Bicycles are the best way to explore ruins", "Tuk-tuks for half-day tours"],
+    "must_see_places": ["Royal Palace", "Gal Vihara", "Parakrama Samudra", "Quadrangle"],
+    "food_notes": ["Local rice and curry buffets", "Fresh lake fish", "Fresh fruit stalls along roads"],
+    "activities": [
+      { "name": "Ancient City Tour", "type": "history", "cost": 7500 },
+      { "name": "Gal Vihara", "type": "culture", "cost": 0 },
+      { "name": "Bicycle Rental", "type": "adventure", "cost": 1000 },
+      { "name": "Archaeological Museum", "type": "history", "cost": 0 }
+    ]
+  },
+  "dambulla": {
+    "destination": "Dambulla",
+    "summary": "Dambulla is famous for its massive cave temple complex filled with ancient statues and paintings, acting as a central hub for the cultural triangle.",
+    "areas_to_stay": ["Dambulla Town", "Kandalama"],
+    "transport_tips": ["Tuk-tuks are easily available", "Walkable around the main temple area"],
+    "must_see_places": ["Dambulla Cave Temple", "Golden Temple", "Popham's Arboretum", "Dambulla Produce Market"],
+    "food_notes": ["Street food near the market", "Traditional Sri Lankan meals", "Hotel buffets"],
+    "activities": [
+      { "name": "Dambulla Cave Temple", "type": "culture", "cost": 3000 },
+      { "name": "Golden Temple", "type": "culture", "cost": 0 },
+      { "name": "Night Safari at Popham's", "type": "nature", "cost": 2500 },
+      { "name": "Market Tour", "type": "culture", "cost": 0 }
+    ]
+  },
+  "hikkaduwa": {
+    "destination": "Hikkaduwa",
+    "summary": "Hikkaduwa is a lively beach town on the southwest coast, renowned for its coral reef, surfing, and vibrant nightlife.",
+    "areas_to_stay": ["Hikkaduwa Beach", "Narigama Beach", "Thiranagama"],
+    "transport_tips": ["Walking along the beach or Galle Road", "Tuk-tuks for short trips", "Scooter rentals"],
+    "must_see_places": ["Hikkaduwa Beach", "Coral Sanctuary", "Tsunami Photo Museum", "Seenigama Vihara"],
+    "food_notes": ["Beachside seafood BBQ", "Roti shops", "Western and European cafes"],
+    "activities": [
+      { "name": "Snorkeling at Coral Sanctuary", "type": "adventure", "cost": 2500 },
+      { "name": "Surfing Lesson", "type": "adventure", "cost": 4000 },
+      { "name": "Glass Bottom Boat Ride", "type": "relax", "cost": 3500 },
+      { "name": "Turtle Hatchery Visit", "type": "nature", "cost": 1000 }
+    ]
+  },
+  "horton_plains": {
+    "destination": "Horton Plains",
+    "summary": "Horton Plains is a protected national park in the central highlands featuring montane grassland, cloud forest, and the famous World's End viewpoint.",
+    "areas_to_stay": ["Nuwara Eliya", "Ohiya", "Pattipola"],
+    "transport_tips": ["Hire a van or jeep from Nuwara Eliya early morning", "Tuk-tuks might struggle with the steep climb"],
+    "must_see_places": ["World's End", "Mini World's End", "Baker's Falls", "Farr Inn"],
+    "food_notes": ["Pack breakfast/lunch to eat in the park", "No food sold inside the park", "Hot tea in nearby towns"],
+    "activities": [
+      { "name": "World's End Hike", "type": "hiking", "cost": 8000 },
+      { "name": "Baker's Falls", "type": "nature", "cost": 0 },
+      { "name": "Wildlife Spotting (Sambar Deer)", "type": "wildlife", "cost": 0 },
+      { "name": "Jeep Transfer to Park", "type": "transport", "cost": 6000 }
+    ]
+  },
+  "udawalawe": {
+    "destination": "Udawalawe",
+    "summary": "Udawalawe is a premier national park for elephant watching, offering landscapes similar to the African savanna.",
+    "areas_to_stay": ["Udawalawe Town", "Near the National Park Entrance"],
+    "transport_tips": ["Safari jeeps are mandatory inside the park", "Buses connect from main southern towns"],
+    "must_see_places": ["Udawalawe National Park", "Elephant Transit Home", "Udawalawe Reservoir"],
+    "food_notes": ["Guest house home-cooked meals", "Simple local restaurants", "Snacks for the safari"],
+    "activities": [
+      { "name": "Jeep Safari", "type": "wildlife", "cost": 12000 },
+      { "name": "Elephant Transit Home Feeding", "type": "wildlife", "cost": 1000 },
+      { "name": "Reservoir Viewpoint", "type": "relax", "cost": 0 },
+      { "name": "Bird Watching Tour", "type": "nature", "cost": 5000 }
+    ]
   }
 }

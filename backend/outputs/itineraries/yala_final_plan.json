@@ -1,0 +1,39 @@
+{
+    "destination": "Yala",
+    "days": 2,
+    "travelers": 1,
+    "budget": 45000.0,
+    "preferences": [
+        "relax"
+    ],
+    "itinerary": [
+        {
+            "day": 1,
+            "activities": [
+                "Yala National Park"
+            ]
+        },
+        {
+            "day": 2,
+            "activities": [
+                "Nearby lakes and bird areas"
+            ]
+        }
+    ],
+    "planner_output": "Initial Trip Draft\nDestination: Yala National Park, Sri Lanka\nDuration: 2 days\nTravelers: 1\nInterests: Relaxing wildlife experiences\n\nAssumptions:\n- The traveler will be attending safari experiences within Yala National Park.\n- There are no specific dietary restrictions or allergies to consider.\n- Local transport options such as taxis and shared rides will be used for travel between the park entrance and nearby areas.\n\nDraft Itinerary\nDay 1: Yala National Park, Safari experience\n- Morning: Arrive at Yala Gate area in the morning. Check-in at a local lodge near the national park entrance.\n- Afternoon: Take a guided safari jeep tour to explore the wildlife within Yala National Park. This will likely include visits to different parts of the park and may involve some walking or hiking trails.\n- Evening: Return to the lodge for dinner, followed by relaxation in the evening.\n\nDay 2: Nearby lakes and bird areas\n- Morning: Drive to nearby lakes and bird sanctuaries such as Tissamaharama. These locations offer opportunities to see a variety of birds without requiring a safari tour.\n- Afternoon: Visit local birding hotspots, possibly including a visit to the Tissamaharama Bird Sanctuary.\n- Evening: Return to the lodge for dinner and leisure time.\n\nPlanning Notes for Budget Agent:\n- The primary cost will be associated with the safari jeep tours within Yala National Park. Other expenses such as accommodation at the lodge near the park entrance, meals, and transportation are expected to be reasonable given the traveler's interest in wildlife experiences.\n- Additional costs may include any necessary vaccinations or travel insurance.\n\nPlanning Notes for Constraint and Validation Agent:\n- Ensure that all transport arrangements (jeeps within Yala National Park and local road journeys) are confirmed well in advance of the trip.\n- Confirm that the lodge near the park entrance is available, as this will be a crucial part of the traveler's accommodation plan.\n- Check if any birding tours or activities at nearby locations are available, which could provide additional wildlife experiences.\n\nPlanning Notes for Recommendation Agent:\n- Suggest alternative lodging options within Yala National Park in case the primary lodge is unavailable.\n- Recommend local restaurants and dining options that align with the traveler's interests of relaxation and wildlife observation.",
+    "cost_breakdown": {
+        "accommodation": 30000.0,
+        "food": 16000.0,
+        "transport": 15000.0,
+        "activities": 17000.0
+    },
+    "total_cost": 78000.0,
+    "validation_status": "INVALID",
+    "validation_errors": [
+        "Budget exceeded by 33000.00. Total cost is 78000.00, budget is 45000.00."
+    ],
+    "recommended_changes": [
+        "Reduced number of paid activities to help lower the total cost."
+    ],
+    "recommendation_attempts": 1
+}
